@@ -11,6 +11,7 @@ export interface TextProps<ComponentType extends React.ElementType> {
   children: React.ReactNode;
   fontSize?: FontSizeUtilityStyles['fontSize'];
   fontFamily?: FontSizeUtilityStyles['fontFamily'];
+  fontWeight?: FontSizeUtilityStyles['fontWeight'];
   lineHeight?: FontSizeUtilityStyles['lineHeight'];
 }
 
@@ -18,12 +19,14 @@ export function Text<ComponentType extends React.ElementType>({
   children,
   fontSize = 1,
   fontFamily = 'body',
+  fontWeight,
   lineHeight = 1,
   ...restProps
 }: TextProps<ComponentType>) {
   const fontProps = {
     fontSize,
     fontFamily,
+    fontWeight,
     lineHeight,
   };
   const Component = restProps.as ?? 'p' as React.ElementType

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Box from './Box/Box';
 import Button from './Button/Button';
 
 export default function Counter({
@@ -14,11 +15,11 @@ export default function Counter({
 
 	return (
 		<>
-			<div className="counter">
+			<Box className="counter">
 				<Button onClick={subtract}>-</Button>
 				<pre>{count}</pre>
 				<Button onClick={add}>+</Button>
-			</div>
+			</Box>
 			<div className="counter-message">{children}</div>
 		</>
 	);

@@ -5,7 +5,7 @@ import {
   FONT_WEIGHTS,
   MEDIA_QUERIES,
   SPACE_PROPERTIES,
-} from '../theme/tokens';
+} from '../../theme/tokens';
 
 const responsiveProperties = defineProperties({
   conditions: MEDIA_QUERIES,

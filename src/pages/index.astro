@@ -2,6 +2,9 @@
 // Component Imports
 import Counter from '../components/Counter';
 import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
+import Link from '../components/Link/Link';
+import Tag from '../components/Tag/Tag';
+import Text from '../components/Text/Text';
 const someProps = {
 	count: 0,
 };
@@ -31,8 +34,11 @@ const someProps = {
 		<ThemeProvider>
 		<main>
 			<Counter {...someProps} client:visible>
-				<h1>Hello, React!</h1>
+				<Text fontFamily="heading">Hello, React!</Text>
 			</Counter>
+			<Link href="#">Link to page</Link>
+			<Tag>#astrojs</Tag>
+			<Text fontFamily="heading" fontSize={6} fontWeight="bold">H1 Header</Text>
 		</main>
 		</ThemeProvider>
 	</body>

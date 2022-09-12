@@ -1,9 +1,10 @@
+import { PropsWithChildren } from 'react';
 import {
   LayoutUtilityStyles,
   layoutUtilityStyles,
 } from '../../styles/utility-styles/utility-styles.css';
 
-export type BoxProps = LayoutUtilityStyles & {
+export type BoxProps = LayoutUtilityStyles & React.HTMLProps<HTMLDivElement> & {
   m?: LayoutUtilityStyles['margin'];
   mt?: LayoutUtilityStyles['marginTop'];
   mr?: LayoutUtilityStyles['marginRight'];
@@ -56,7 +57,8 @@ export function Box({
   width,
   height,
   placeItems,
-}: BoxProps) {
+  children,
+}: PropsWithChildren<BoxProps>) {
   const utilityProps: LayoutUtilityStyles = {
     margin: m ?? margin,
     marginTop: mt ?? marginTop,
@@ -82,7 +84,7 @@ export function Box({
   };
   return (
     <div className={layoutUtilityStyles(utilityProps)}>
-      <h1>Welcome to Box!</h1>
+      {children}
     </div>
   );
 }
