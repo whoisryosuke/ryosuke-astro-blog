@@ -1,5 +1,11 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import './Counter.css';
+
+const Button = styled.button({
+	backgroundColor: 'blue',
+	color: 'white',
+})
 
 export default function Counter({
 	children,
@@ -15,9 +21,9 @@ export default function Counter({
 	return (
 		<>
 			<div className="counter">
-				<button onClick={subtract}>-</button>
+				<Button onClick={subtract}>-</Button>
 				<pre>{count}</pre>
-				<button onClick={add}>+</button>
+				<Button onClick={add}>+</Button>
 			</div>
 			<div className="counter-message">{children}</div>
 		</>
