@@ -1,11 +1,5 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-import './Counter.css';
-
-const Button = styled.button({
-	backgroundColor: 'blue',
-	color: 'white',
-})
+import Button from './Button/Button';
 
 export default function Counter({
 	children,

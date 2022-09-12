@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import Counter from '../components/Counter';
+import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
 const someProps = {
 	count: 0,
 };
@@ -27,10 +28,12 @@ const someProps = {
 		</style>
 	</head>
 	<body>
+		<ThemeProvider>
 		<main>
 			<Counter {...someProps} client:visible>
 				<h1>Hello, React!</h1>
 			</Counter>
 		</main>
+		</ThemeProvider>
 	</body>
 </html>
