@@ -58,6 +58,7 @@ export function Box({
   height,
   placeItems,
   children,
+  ...rest
 }: PropsWithChildren<BoxProps>) {
   const utilityProps: LayoutUtilityStyles = {
     margin: m ?? margin,
@@ -83,7 +84,7 @@ export function Box({
     placeItems,
   };
   return (
-    <div className={layoutUtilityStyles(utilityProps)}>
+    <div className={layoutUtilityStyles(utilityProps)} {...rest}>
       {children}
     </div>
   );

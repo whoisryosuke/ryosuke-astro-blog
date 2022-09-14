@@ -5,6 +5,7 @@ import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
 import Link from '../components/Link/Link';
 import Tag from '../components/Tag/Tag';
 import Text from '../components/Text/Text';
+import SceneWaves from '../components/SceneWaves/SceneWaves';
 const someProps = {
 	count: 0,
 };
@@ -26,12 +27,12 @@ const someProps = {
 				margin: 0;
 			}
 			body {
-				padding: 2rem;
 			}
 		</style>
 	</head>
 	<body>
 		<ThemeProvider>
+		<SceneWaves client:visible />
 		<main>
 			<Counter {...someProps} client:visible>
 				<Text fontFamily="heading">Hello, React!</Text>
