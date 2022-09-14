@@ -3,13 +3,13 @@ import Wave from "./Wave/Wave";
 
 
 const Waves = () => {
-  const waves = new Array(9)
+  const waves = new Array(18)
     .fill(0)
     .map((_, index) => (
       <Wave key={index} position={[index * 0.6, 0, 0]} offset={index} />
     ));
 
-  return <group position={[-2, 0, 0]} rotation={[0, Math.PI / 10, 0]}>
+  return <group position={[-2, 1, 10]} rotation={[0, Math.PI / 3, 0]}>
     {waves}
   </group>;
 };
