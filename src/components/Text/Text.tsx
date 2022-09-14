@@ -19,7 +19,7 @@ export function Text<ComponentType extends React.ElementType>({
   children,
   fontSize = 1,
   fontFamily = 'body',
-  fontWeight,
+  fontWeight = 'regular',
   lineHeight = 1,
   ...restProps
 }: TextProps<ComponentType>) {
@@ -29,9 +29,13 @@ export function Text<ComponentType extends React.ElementType>({
     fontWeight,
     lineHeight,
   };
+  // We separate the `as` prop so it doesn't get passed to component
+  const { as, ...props } = restProps;
+  // Decide the component type based on `as` prop
+  // You can't use `as` alone - protected word in TS - so we use it from `restProps`
   const Component = restProps.as ?? 'p' as React.ElementType
   return (
-    <Component className={clsx(textStyles, fontSizeUtilityStyles(fontProps))}>
+    <Component className={clsx(textStyles, fontSizeUtilityStyles(fontProps))} {...props}>
       {children}
     </Component>
   );

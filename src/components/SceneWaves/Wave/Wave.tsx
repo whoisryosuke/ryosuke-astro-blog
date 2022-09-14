@@ -11,7 +11,7 @@ const WAVE_SIZE = {
   height: 10,
   depth: 0.05,
   widthSegment: 2,
-  heightSegment: 32
+  heightSegment: 64
 };
 
 function Wave({ offset, ...props }: WaveProps) {
@@ -25,7 +25,7 @@ function Wave({ offset, ...props }: WaveProps) {
   return (
     <mesh
       ref={geom}
-      rotation={[-Math.PI / 2, 0, 0]}
+      rotation={[-Math.PI / 2, -Math.PI, 0]}
       castShadow
       receiveShadow
       {...props}
