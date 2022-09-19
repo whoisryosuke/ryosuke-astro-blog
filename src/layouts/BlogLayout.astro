@@ -1,25 +1,14 @@
 ---
-import Background from "../components/Background"
-import GlobalStyles from "../components/GlobalStyles.astro"
-import ThemeProvider from "../components/ThemeProvider/ThemeProvider"
-import "../styles/blog.css"
+import Html from "../components/Html/Html"
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter } = Astro.props;
 ---
-<html>
-  <head>
-    <!-- Add other Head elements here, like styles and meta tags. -->
-    <title>{frontmatter.title}</title>
-  </head>
-  <body>
-      <ThemeProvider>
-        <!-- Add other UI components here, like common headers and footers. -->
-        <img src={frontmatter.cover_image} alt={frontmatter.title} width="100%"/>
-        <h1>{frontmatter.title}</h1>
-        <p>Written on: {frontmatter.date}</p>
-        <p>Tagged: {frontmatter.tags.join(", ")}</p>
-        <!-- 2. Rendered HTML will be passed into the default slot. -->
-        <slot />
-      </ThemeProvider>
-  </body>
-</html>
+<Html title={frontmatter.title}>
+  <!-- Add other UI components here, like common headers and footers. -->
+  <img src={frontmatter.cover_image} alt={frontmatter.title} width="100%"/>
+  <h1>{frontmatter.title}</h1>
+  <p>Written on: {frontmatter.date}</p>
+  <p>Tagged: {frontmatter.tags.join(", ")}</p>
+  <!-- 2. Rendered HTML will be passed into the default slot. -->
+  <slot />
+</Html>

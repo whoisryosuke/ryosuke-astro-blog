@@ -1,0 +1,8 @@
+---
+import Html from "../components/Html/Html"
+// 1. The frontmatter prop gives access to frontmatter and other data
+const { title } = Astro.props;
+---
+<Html title={title}>
+  <slot />
+</Html>

@@ -1,11 +1,10 @@
 ---
 // Component Imports
 import Counter from '../components/Counter';
-import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
 import Link from '../components/Link/Link';
 import Tag from '../components/Tag/Tag';
 import Text from '../components/Text/Text';
-import Fonts from '../components/Fonts/Fonts';
+import DefaultPage from '../layouts/DefaultPage.astro';
 import SceneWaves from '../components/SceneWaves/SceneWaves';
 const someProps = {
 	count: 0,
@@ -15,34 +14,14 @@ const someProps = {
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<Fonts />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-			}
-		</style>
-	</head>
-	<body>
-		<ThemeProvider>
-		<SceneWaves client:visible />
-		<main>
-			<Counter {...someProps} client:visible>
-				<Text fontFamily="heading">Hello, React!</Text>
-			</Counter>
-			<Link href="#">Link to page</Link>
-			<Tag>#astrojs</Tag>
-			<Text fontFamily="heading" fontSize={6} fontWeight="bold">H1 Header</Text>
-		</main>
-		</ThemeProvider>
-	</body>
-</html>
+<DefaultPage title="The blog and portfolio of Ryosuke">
+	<SceneWaves client:visible />
+	<main>
+		<Counter {...someProps} client:visible>
+			<Text fontFamily="heading">Hello, React!</Text>
+		</Counter>
+		<Link href="#">Link to page</Link>
+		<Tag>#astrojs</Tag>
+		<Text fontFamily="heading" fontSize={6} fontWeight="bold">H1 Header</Text>
+	</main>
+</DefaultPage>
