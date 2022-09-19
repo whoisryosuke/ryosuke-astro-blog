@@ -4,8 +4,10 @@ import Counter from '../components/Counter';
 import Link from '../components/Link/Link';
 import Tag from '../components/Tag/Tag';
 import Text from '../components/Text/Text';
+import Logo from '../components/Logo/Logo';
 import DefaultPage from '../layouts/DefaultPage.astro';
 import SceneWaves from '../components/SceneWaves/SceneWaves';
+import MainNav from '../components/MainNav/MainNav';
 const someProps = {
 	count: 0,
 };
@@ -17,11 +19,7 @@ const someProps = {
 <DefaultPage title="The blog and portfolio of Ryosuke">
 	<SceneWaves client:visible />
 	<main>
-		<Counter {...someProps} client:visible>
-			<Text fontFamily="heading">Hello, React!</Text>
-		</Counter>
-		<Link href="#">Link to page</Link>
-		<Tag>#astrojs</Tag>
-		<Text fontFamily="heading" fontSize={6} fontWeight="bold">H1 Header</Text>
+		<Logo />
+		<MainNav />
 	</main>
 </DefaultPage>

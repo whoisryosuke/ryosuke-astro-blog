@@ -1,17 +1,18 @@
 import { linkStyles } from './Link.css';
 import clsx from 'clsx';
-import { DetailedHTMLProps, LinkHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 import Text from "../Text/Text"
 
 /* eslint-disable-next-line */
-export interface LinkProps extends Omit<DetailedHTMLProps<LinkHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, 'size'> {
+export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
+  textClass?: string;
 }
 
-export function Link({ children, ...props }: LinkProps) {
+export function Link({ children, className,textClass,...props }: LinkProps) {
   return (
-    <a className={clsx(linkStyles)} {...props}>
-      <Text style={{marginBottom: 0}}>{children}</Text>
+    <a className={clsx(linkStyles, className)} {...props}>
+      <Text className={textClass} style={{marginBottom: 0}}>{children}</Text>
     </a>
   );
 }
