@@ -1,5 +1,5 @@
 import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
-import { MEDIA_QUERIES, SPACE_PROPERTIES } from '../../theme/tokens';
+import { COLUMN_PROPERTIES, MEDIA_QUERIES, SPACE_PROPERTIES } from '../../theme/tokens';
 
 const responsiveProperties = defineProperties({
   conditions: MEDIA_QUERIES,
@@ -16,7 +16,7 @@ const responsiveProperties = defineProperties({
       'space-between',
     ],
     alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
-    width: SPACE_PROPERTIES,
+    width: COLUMN_PROPERTIES,
     height: SPACE_PROPERTIES,
     paddingTop: SPACE_PROPERTIES,
     paddingBottom: SPACE_PROPERTIES,

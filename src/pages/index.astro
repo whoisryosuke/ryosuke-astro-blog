@@ -1,7 +1,7 @@
 ---
 // Component Imports
-import Counter from '../components/Counter';
-import Link from '../components/Link/Link';
+import Box from '../components/Box/Box';
+import AboutMe from '../components/AboutMe/AboutMe';
 import Tag from '../components/Tag/Tag';
 import Text from '../components/Text/Text';
 import Logo from '../components/Logo/Logo';
@@ -19,7 +19,12 @@ const someProps = {
 <DefaultPage title="The blog and portfolio of Ryosuke">
 	<SceneWaves client:visible />
 	<main>
-		<Logo />
-		<MainNav />
+		<header>
+			<Logo />
+			<MainNav />
+		</header>
+		<Box as="section" paddingTop={10} px={8}>
+			<AboutMe />
+		</Box>
 	</main>
 </DefaultPage>

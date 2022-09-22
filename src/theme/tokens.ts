@@ -59,3 +59,19 @@ export const SPACE_PROPERTIES = {
   11: '256px',
   12: '512px',
 };
+
+export const COLUMN_PROPERTIES = {
+  0: '256px',
+  1: '288px',
+  2: '320px',
+  3: '384px',
+  4: '448px',
+  5: '512px',
+  6: '576px',
+  7: '672px',
+  8: '768px',
+  9: '896px',
+  10: '1024px',
+  11: '1152px',
+  12: '1280px',
+};

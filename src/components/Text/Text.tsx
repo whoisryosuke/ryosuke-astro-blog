@@ -13,7 +13,7 @@ export interface TextProps<ComponentType extends React.ElementType> {
   fontFamily?: FontSizeUtilityStyles['fontFamily'];
   fontWeight?: FontSizeUtilityStyles['fontWeight'];
   lineHeight?: FontSizeUtilityStyles['lineHeight'];
-  className: string;
+  className?: string;
 }
 
 export function Text<ComponentType extends React.ElementType>({
