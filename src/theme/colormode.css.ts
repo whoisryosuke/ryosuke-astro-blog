@@ -1,30 +1,30 @@
 import { createThemeContract } from '@vanilla-extract/css';
 
 const colors = {
-  text: null,
-  reading: null,
-  background: null,
+  text: '',
+  reading: '',
+  background: '',
   primary: {
-    default: null,
-    hovered: null,
-    pressed: null,
+    default: '',
+    hovered: '',
+    pressed: '',
   },
-  // secondary: null,
-  muted: null,
-  highlight: null,
+  // secondary: '',
+  muted: '',
+  highlight: '',
 
-  success: null,
-  message: null,
-  warning: null,
-  danger: null,
+  success: '',
+  message: '',
+  warning: '',
+  danger: '',
 };
 
 const gradients = {
-  // subtle: null,
-  // purple: null,
+  // subtle: '',
+  // purple: '',
   blue: {
-    default: null,
-    hover: null,
+    default: '',
+    hover: '',
   },
 };
 

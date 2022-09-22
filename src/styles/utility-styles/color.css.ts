@@ -1,13 +1,6 @@
 import { colorTokens } from '@/theme/colormode.css';
 import { themes } from '@/theme/index';
 import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
-import {
-  FONTS,
-  FONT_SIZE_PROPERTIES,
-  FONT_WEIGHTS,
-  MEDIA_QUERIES,
-  SPACE_PROPERTIES,
-} from '../../theme/tokens';
 
 const colorProperties = defineProperties({
   conditions: {
@@ -18,6 +11,8 @@ const colorProperties = defineProperties({
   },
   defaultCondition: false,
   properties: {
+    // Neither work
+    // color: colorTokens.colors,
     color: themes.tokens.colors,
   },
   shorthands: {},
