@@ -22,7 +22,10 @@ const colors = {
 const gradients = {
   // subtle: null,
   // purple: null,
-  // blue: null,
+  blue: {
+    default: null,
+    hover: null,
+  },
 };
 
 export const colorTokens = createThemeContract({
