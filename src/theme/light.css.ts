@@ -11,7 +11,7 @@ export const primaryColors = {
     pressed: '#1A17BC',
   },
   // secondary: primaryColors.purple[500],
-  muted: '#f6f6f9',
+  muted: '#b6b6b9',
   highlight: 'hsla(205, 100%, 40%, 0.125)',
 
   success: 'green',
