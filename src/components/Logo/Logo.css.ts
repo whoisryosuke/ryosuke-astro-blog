@@ -13,9 +13,11 @@ export const logoContainerStyles = style({
     '@media': {
         [MEDIA_QUERIES.mobile['@media']]: {
             top:250,
+            right: -75
         },
         [MEDIA_QUERIES.tablet['@media']]: {
             top:126,
+            right: -30,
         }
     }
 });
@@ -23,5 +25,22 @@ export const logoContainerStyles = style({
 export const logoTextStyles = style({
     textTransform: 'uppercase',
     margin:0,
-    padding:0,
+    padding:'5px',
+    
+    background: themes.tokens.gradients.text.text.default,
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent',
+
+
+    ':hover': {
+        background: themes.tokens.gradients.text.blue.hover,
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent',
+        // backdropFilter: 'blur(30px)',
+
+    },
 });
+
+export const logoLinkStyles = style({
+    textDecoration: 'none'
+})

@@ -7,7 +7,7 @@ type Props = BoxProps & {
     vertical?: boolean;
 }
 
-const Stack = ({gap = '8px', vertical = false, style, children}: PropsWithChildren<Props>) => {
+const Stack = ({gap = '8px', vertical = false, style, children, ...props}: PropsWithChildren<Props>) => {
 
     const gapDirection = vertical ? 'marginBottom' : 'marginRight';
     // The CSS for gap between elements
@@ -34,7 +34,7 @@ const Stack = ({gap = '8px', vertical = false, style, children}: PropsWithChildr
     }))
 
   return (
-    <Box display="flex" style={{...style, ...containerDirection}}>
+    <Box display="flex" style={{...style, ...containerDirection}} {...props}>
         {spacedChildren}
     </Box>
   )

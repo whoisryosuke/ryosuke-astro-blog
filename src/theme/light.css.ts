@@ -40,6 +40,10 @@ export const gradients = {
       default: `-webkit-linear-gradient(90deg, #060613 0%, #141419 36.1%);`,
       hover: `-webkit-linear-gradient(90deg, #141419 0%, #242429 36.1%);`
     },
+    invert: {
+      default: `-webkit-linear-gradient(90deg, #BBB 0%, #DDD 36.1%);`,
+      hover: `-webkit-linear-gradient(90deg, #DDD 0%, #EEE 36.1%);`
+    },
   }
 };
 

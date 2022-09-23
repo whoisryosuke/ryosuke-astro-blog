@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from 'react'
 import Fonts from '../Fonts/Fonts';
 import ThemeProvider from '../ThemeProvider/ThemeProvider';
 import "../../styles/global.css"
+import "normalize.css"
 
 type Props = {
     // Title of page (passed to `<head>`)

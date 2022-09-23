@@ -26,7 +26,10 @@ const someProps = {
 				<Logo />
 				<MainNav />
 			</header>
-			<Box as="section" paddingTop={10} px={8}>
+			<Box as="section" paddingTop={10} px={{
+				mobile: 4,
+				tablet: 8
+				}}>
 				<AboutMe />
 				<ContactCTA />
 			</Box>

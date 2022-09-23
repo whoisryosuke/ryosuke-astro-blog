@@ -1,3 +1,4 @@
+import { MEDIA_QUERIES } from '@/theme/tokens';
 import { style } from '@vanilla-extract/css';
 import { themes, base } from '../../theme';
 
@@ -5,11 +6,21 @@ export const navLayoutStyle = style({
     width: '100%',
     position:'absolute',
     top:40,
-    left: 'auto',
     zIndex: 710,
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
+
+    '@media': {
+        [MEDIA_QUERIES.mobile['@media']]: {
+            top:20,
+            justifyContent: 'flex-end',
+        },
+        [MEDIA_QUERIES.tablet['@media']]: {
+            top:40,
+            justifyContent: 'center',
+        },
+    }
 });
 
 export const navContainerStyle = style({
@@ -19,6 +30,15 @@ export const navContainerStyle = style({
     background: 'rgba(255, 255, 255, 0.1)',
     backdropFilter: 'blur(6px)',
     borderRadius: '36px',  
+
+    '@media': {
+        [MEDIA_QUERIES.mobile['@media']]: {
+            padding: '15px',
+        },
+        [MEDIA_QUERIES.tablet['@media']]: {
+            padding: '15px 80px',
+        },
+    }
 });
 
 export const navListStyle = style({

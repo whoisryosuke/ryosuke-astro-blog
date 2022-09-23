@@ -34,6 +34,10 @@ const gradients = {
     text: {
       default: '',
       hover: '',
+    },
+    invert: {
+      default: '',
+      hover: '',
     }
   }
 };

@@ -17,7 +17,7 @@ const responsiveProperties = defineProperties({
     ],
     alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
     width: COLUMN_PROPERTIES,
-    height: SPACE_PROPERTIES,
+    height: COLUMN_PROPERTIES,
     paddingTop: SPACE_PROPERTIES,
     paddingBottom: SPACE_PROPERTIES,
     paddingLeft: SPACE_PROPERTIES,

@@ -23,11 +23,22 @@ const MainNav = (props: Props) => {
   return (
     <Box className={navLayoutStyle}>
         <Box as="nav" className={navContainerStyle}>
-            <Stack gap="36px">
-                <MainNavItem href="/blog">Blog</MainNavItem>
-                <MainNavItem href="/work">Work</MainNavItem>
-                <MainNavItem href="/resources">Resources</MainNavItem>
-                <MainNavItem href="/playlist">Playlist</MainNavItem>
+            <Stack gap="36px" flexDirection={{
+                    mobile: 'column',
+                    tablet: "row"
+                }}>
+                <Stack gap="36px" flexDirection={{
+                    tablet: "row"
+                }}>
+                    <MainNavItem href="/blog">Blog</MainNavItem>
+                    <MainNavItem href="/work">Work</MainNavItem>
+                </Stack>
+                <Stack gap="36px" flexDirection={{
+                    tablet: "row"
+                }}>
+                    <MainNavItem href="/resources">Resources</MainNavItem>
+                    <MainNavItem href="/playlist">Playlist</MainNavItem>
+                </Stack>
             </Stack>
         </Box>
     </Box>
