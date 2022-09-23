@@ -26,6 +26,16 @@ const gradients = {
     default: '',
     hover: '',
   },
+  text: {
+    blue: {
+      default: '',
+      hover: '',
+    },
+    text: {
+      default: '',
+      hover: '',
+    }
+  }
 };
 
 export const colorTokens = createThemeContract({

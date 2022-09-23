@@ -31,4 +31,19 @@ export const navItemStyle = style({
     border:0,
     textDecoration: 'none',
     color: themes.tokens.colors.text,
+
+    
+    background: themes.tokens.gradients.text.text.default,
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent',
+
+    transition: 'background 400ms linear, transform 200ms linear',
+
+    ':hover': {
+        background: themes.tokens.gradients.text.blue.default,
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent',
+
+        transform: 'scale(1.05)',
+    }
 });

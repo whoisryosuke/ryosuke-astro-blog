@@ -31,6 +31,16 @@ export const gradients = {
     default: `linear-gradient(90deg, #1F1BD8 0%, #4845EF 36.1%);`,
     hover: `linear-gradient(90deg, #4845EF 0%, #1F1BD8 36.1%);`
   },
+  text: {
+    blue: {
+      default: `-webkit-linear-gradient(90deg, #1F1BD8 0%, #4845EF 36.1%);`,
+      hover: `-webkit-linear-gradient(90deg, #4845EF 0%, #1F1BD8 36.1%);`
+    },
+    text: {
+      default: `-webkit-linear-gradient(90deg, #060613 0%, #141419 36.1%);`,
+      hover: `-webkit-linear-gradient(90deg, #141419 0%, #242429 36.1%);`
+    },
+  }
 };
 
 export const light = createTheme(colorTokens, {
