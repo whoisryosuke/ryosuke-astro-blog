@@ -19,15 +19,15 @@ export const codeInlineStyles = style({
         'p > &:after': {
             content: '',
             width: '100%',
-            height: '80%',
+            height: '70%',
             display: 'inline-block',
             position:'absolute',
             left:'0',
-            top:'10%',
+            top:'15%',
 
             background: themes.tokens.gradients.blue.default,
             zIndex:-1,
-            opacity: 0.6,
+            opacity: 1,
         },
         'p > &:hover:after': {
             opacity: 1,

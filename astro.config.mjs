@@ -31,6 +31,11 @@ const mdxProvider = () => {
 
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    shikiConfig: {
+      theme: "material-palenight",
+    },
+  },
   // Enable React to support React JSX components.
   integrations: [react(), mdx()],
 

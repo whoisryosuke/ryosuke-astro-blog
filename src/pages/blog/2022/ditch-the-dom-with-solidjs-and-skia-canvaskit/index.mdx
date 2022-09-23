@@ -22,7 +22,7 @@ My goal was to have an library that the developer can write in a JSX syntax and 
 
 # Beat to it
 
-After a little research, I found that someone has already beat me to it for React — [**react-canvaskit**](https://github.com/udevbe/react-canvaskit). This implementation used [react-reconciler](https://www.npmjs.com/package/react-reconciler) to create a custom renderer for React. This is the same process used by [\*\*react-three-fiber](https://github.com/pmndrs/react-three-fiber/)** (aka **R3F**) to bring [**ThreeJS\*\*](https://threejs.org/) elements to the React VDOM/lifecycle (e.g. when you use `<mesh>`).
+After a little research, I found that someone has already beat me to it for React — **[react-canvaskit](https://github.com/udevbe/react-canvaskit)**. This implementation used [react-reconciler](https://www.npmjs.com/package/react-reconciler) to create a custom renderer for React. This is the same process used by [\*\*react-three-fiber](https://github.com/pmndrs/react-three-fiber/)** (aka **R3F**) to bring [**ThreeJS\*\*](https://threejs.org/) elements to the React VDOM/lifecycle (e.g. when you use `<mesh>`).
 
 Basically what react-reconciler does is let you create custom elements that are lowerCamelCase (like `<ambientLight>` or `<skParagraph>`). When these components render, they call a function or class you specify. In **react-canvaskit**, they essentially call the CanvasKit APIs.
 
@@ -30,7 +30,7 @@ The author of **react-canvaskit** did a great job of knocking most of the core a
 
 # SolidJS universal renderer
 
-I had some time to dive into [**SolidJS**](https://www.solidjs.com/) a couple weeks ago, and it seems like a great and [even much faster](https://krausest.github.io/js-framework-benchmark/current.html) alternative to React. It’s basically the same as React — it uses JSX and hooks, with [a couple minor differences.](https://www.solidjs.com/guides/comparison)
+I had some time to dive into **[SolidJS](https://www.solidjs.com/)** a couple weeks ago, and it seems like a great and [even much faster](https://krausest.github.io/js-framework-benchmark/current.html) alternative to React. It’s basically the same as React — it uses JSX and hooks, with [a couple minor differences.](https://www.solidjs.com/guides/comparison)
 
 What really attracted me to **SolidJS** was [the Universal renderer](https://github.com/solidjs/solid/tree/main/packages/solid/universal). It’s like being able to create your own version of React DOM.
 
@@ -305,4 +305,3 @@ Ryo
 - [canvaskit-wasm on NPM](https://www.npmjs.com/package/canvaskit-wasm)
 - [Skia C++ Examples](https://github.com/google/skia/blob/1f193df9b393d50da39570dab77a0bb5d28ec8ef/modules/canvaskit/npm_build/example.html)
 - [SolidJS](https://www.solidjs.com/)
-- [Webpack 5 breaks dynamic wasm i
