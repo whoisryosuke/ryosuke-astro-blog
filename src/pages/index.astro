@@ -3,39 +3,18 @@
 import Box from '../components/Box/Box';
 import AboutMe from '../components/AboutMe/AboutMe';
 import ContactCTA from '../components/ContactCTA/ContactCTA';
-import Copyright from '../components/Copyright/Copyright';
-import Tag from '../components/Tag/Tag';
-import Text from '../components/Text/Text';
-import Logo from '../components/Logo/Logo';
 import DefaultPage from '../layouts/DefaultPage.astro';
-import SceneWaves from '../components/SceneWaves/SceneWaves';
-import MainNav from '../components/MainNav/MainNav';
-const someProps = {
-	count: 0,
-};
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <DefaultPage title="The blog and portfolio of Ryosuke">
-	<SceneWaves client:visible />
-	<Box display="flex" flexDirection="column" justifyContent="space-between" style={{flex:1}}>
-		<main>
-			<header>
-				<Logo />
-				<MainNav />
-			</header>
-			<Box as="section" paddingTop={10} px={{
-				mobile: 4,
-				tablet: 8
-				}}>
-				<AboutMe />
-				<ContactCTA />
-			</Box>
-		</main>
-		<footer>
-			<Copyright />
-		</footer>
+	<Box as="section" paddingTop={10} px={{
+		mobile: 4,
+		tablet: 8
+	}}>
+		<AboutMe />
+		<ContactCTA />
 	</Box>
 </DefaultPage>

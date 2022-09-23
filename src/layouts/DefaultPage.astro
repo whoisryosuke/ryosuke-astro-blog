@@ -1,8 +1,27 @@
 ---
 import Html from "../components/Html/Html"
-// 1. The frontmatter prop gives access to frontmatter and other data
+import Box from '../components/Box/Box';
+import Copyright from '../components/Copyright/Copyright';
+import Logo from '../components/Logo/Logo';
+import SceneWaves from '../components/SceneWaves/SceneWaves';
+import MainNav from '../components/MainNav/MainNav';
+
 const { title } = Astro.props;
 ---
 <Html title={title}>
-  <slot />
+	<SceneWaves client:visible />
+	<Box display="flex" flexDirection="column" justifyContent="space-between" style={{flex:1}}>
+		<main>
+			<header>
+				<Logo />
+				<MainNav />
+			</header>
+			
+      <slot />
+      
+		</main>
+		<footer>
+			<Copyright />
+		</footer>
+	</Box>
 </Html>

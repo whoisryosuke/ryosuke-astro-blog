@@ -1,14 +1,38 @@
 ---
-import Html from "../components/Html/Html"
+import Box from '@/components/Box/Box';
+import Text from '@/components/Text/Text';
+import DefaultPage from "./DefaultPage.astro"
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter } = Astro.props;
 ---
-<Html title={frontmatter.title}>
-  <!-- Add other UI components here, like common headers and footers. -->
-  <img src={frontmatter.cover_image} alt={frontmatter.title} width="100%"/>
-  <h1>{frontmatter.title}</h1>
-  <p>Written on: {frontmatter.date}</p>
-  <p>Tagged: {frontmatter.tags.join(", ")}</p>
-  <!-- 2. Rendered HTML will be passed into the default slot. -->
-  <slot />
-</Html>
+<DefaultPage title={frontmatter.title}>
+
+
+	<Box 
+    as="section" 
+    width={8}
+    paddingTop={10} 
+    px={{
+      mobile: 4,
+      tablet: 8
+    }}
+  >
+    <Box display="flex" alignItems="flex-end" justifyContent="space-between">
+      <Box
+        width={6}
+      >
+        <Text fontFamily="heading" fontSize={6} lineHeight={7}>{frontmatter.title}</h1>
+      </Box>
+
+      <Box as="section" id="published_date">
+        <Text fontFamily="heading" fontSize={2}>Published</Text>
+        <Text fontSize={1}>{frontmatter.date}</Text>
+      </Box>
+    </Box>
+
+    <slot />
+
+    <p>Tagged: {frontmatter.tags.join(", ")}</p>
+
+	</Box>
+</DefaultPage>

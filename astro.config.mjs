@@ -4,6 +4,30 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 import mdx from "@astrojs/mdx";
 
+export const mdxProvider = () => {
+  return {
+    name: "mdx-components-provider",
+    enforce: "post",
+    transform(code, id) {
+      if (!id.endsWith(".mdx")) return;
+      code = `import { components } from '@/components/MDXComponents/MDXComponents';\n${code}`;
+      code = code.replace(
+        "export default MDXContent;",
+        `
+        export default function (props) {
+          console.log('components', components);
+          const newProps = {
+            ...props,
+            components
+          }
+          return MDXContent(newProps);
+        };`
+      );
+      return code;
+    },
+  };
+};
+
 // https://astro.build/config
 export default defineConfig({
   // Enable React to support React JSX components.
