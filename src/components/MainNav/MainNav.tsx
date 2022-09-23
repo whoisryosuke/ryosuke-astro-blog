@@ -30,7 +30,7 @@ const MainNav = (props: Props) => {
                 <Stack gap="36px" flexDirection={{
                     tablet: "row"
                 }}>
-                    <MainNavItem href="/blog">Blog</MainNavItem>
+                    <MainNavItem href="/blog">Writing</MainNavItem>
                     <MainNavItem href="/work">Work</MainNavItem>
                 </Stack>
                 <Stack gap="36px" flexDirection={{

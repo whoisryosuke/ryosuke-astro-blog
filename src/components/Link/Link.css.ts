@@ -51,3 +51,8 @@ export const linkInlineStyles = style({
     }
   }
 });
+
+
+export const linkColorPrimaryStyles = style({
+  color: themes.tokens.colors.primary.default,
+});

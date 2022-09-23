@@ -9,6 +9,7 @@ const colors = {
     hovered: '',
     pressed: '',
   },
+  glass: '',
   // secondary: '',
   muted: '',
   highlight: '',

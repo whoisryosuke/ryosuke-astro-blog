@@ -12,7 +12,7 @@ export const SceneWaves = (props: Props) => {
     <Box height={{
       mobile: 5,
       tablet: 3,
-    }} style={{width: '100%', position: 'absolute', top:0, left:0, zIndex:-1,
+    }} style={{width: '100%', position: 'fixed', top:0, left:0, zIndex:-1,
       // Mask the bottom of the canvas with a gradient
       WebkitMaskImage: `linear-gradient(to top, transparent 25%, black 75%)`,
       // '-webkit-mask-image': `linear-gradient(to top, transparent 25%, black 75%)`,

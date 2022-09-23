@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 import {
   LayoutUtilityStyles,
@@ -58,6 +59,7 @@ export function Box({
   height,
   placeItems,
   children,
+  className,
   ...rest
 }: PropsWithChildren<BoxProps>) {
   // Decide the component type based on `as` prop
@@ -87,7 +89,7 @@ export function Box({
     placeItems,
   };
   return (
-    <Component className={layoutUtilityStyles(utilityProps)} {...rest}>
+    <Component className={clsx(layoutUtilityStyles(utilityProps), className)} {...rest}>
       {children}
     </Component>
   );
