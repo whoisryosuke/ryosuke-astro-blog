@@ -3,34 +3,51 @@ import { themes, base } from '../../theme';
 
 export const linkStyles = style({
   display: 'inline-block',
+  position: 'relative',
   color: themes.tokens.colors.text,
-  marginBottom: base.tokens.space[2],
+  marginLeft: base.tokens.space[1],
+  marginRight: base.tokens.space[1],
   // borderBottom: '3px solid',
   // borderColor: themes.tokens.colors.primary.default,
   textDecoration: 'none',
-  paddingBottom: base.tokens.space[2],
+  transition: 'color 400ms linear',
 
   ":hover": {
-    
+    color: themes.tokens.colors.primary,
   },
-});
 
-export const linkUnderlineStyles = style({
-  width: '100%',
-  height: '3px',
+  ":after": {
+    content: '',
+    width: '100%',
+    height: '3px',
+    display:'block',
+    position: 'absolute',
+    left: 0,
+    bottom:0,
     background: themes.tokens.gradients.blue.default,
-  textDecoration: 'none',
-  marginTop: base.tokens.space[2],
-  transition: 'background 400ms linear, transform 400ms linear',
-
-  // ":hover": {
-  //   background: themes.tokens.gradients.blue,
-  // },
+    textDecoration: 'none',
+    // marginTop: base.tokens.space[2],
+    transition: 'background 400ms linear, transform 400ms linear',
+    transform: "translateY(-4px)"
+  },
 
   selectors: {
-    [`${linkStyles}:hover &`]: {
+    '&:hover:after': {
       background: themes.tokens.gradients.blue.hover,
-      transform: "translateY(-2px)"
+      transform: "translateY(-6px)"
+    }
+  }
+});
+
+
+export const linkInlineStyles = style({
+  ":after": {
+    opacity:0.3,
+    transition: 'background 400ms linear, transform 400ms linear, opacity 400ms linear',
+  },
+  selectors: {
+    '&:hover:after': {
+      opacity:1,
     }
   }
 });

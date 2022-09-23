@@ -17,11 +17,16 @@ const { frontmatter } = Astro.props;
       tablet: 8
     }}
   >
-    <Box display="flex" alignItems="flex-end" justifyContent="space-between">
+    <Box 
+      display="flex" 
+      alignItems="flex-end" 
+      justifyContent="space-between"
+      marginBottom={8}
+    >
       <Box
         width={6}
       >
-        <Text fontFamily="heading" fontSize={6} lineHeight={7}>{frontmatter.title}</h1>
+        <Text as="h1" fontFamily="heading" fontSize={6} lineHeight={7} style={{marginBottom:0}}>{frontmatter.title}</Text>
       </Box>
 
       <Box as="section" id="published_date">

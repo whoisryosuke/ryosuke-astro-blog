@@ -60,6 +60,9 @@ export function Box({
   children,
   ...rest
 }: PropsWithChildren<BoxProps>) {
+  // Decide the component type based on `as` prop
+  // You can't use `as` alone - protected word in TS - so we use it from `restProps`
+  const Component = rest.as ?? 'div' as React.ElementType
   const utilityProps: LayoutUtilityStyles = {
     margin: m ?? margin,
     marginTop: mt ?? marginTop,
@@ -84,9 +87,9 @@ export function Box({
     placeItems,
   };
   return (
-    <div className={layoutUtilityStyles(utilityProps)} {...rest}>
+    <Component className={layoutUtilityStyles(utilityProps)} {...rest}>
       {children}
-    </div>
+    </Component>
   );
 }
 

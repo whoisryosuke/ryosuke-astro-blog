@@ -4,7 +4,9 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 import mdx from "@astrojs/mdx";
 
-export const mdxProvider = () => {
+// Swap out elements in MDX file with React components
+// e.g. `<p>` becomes `<Text>`
+const mdxProvider = () => {
   return {
     name: "mdx-components-provider",
     enforce: "post",
@@ -15,7 +17,6 @@ export const mdxProvider = () => {
         "export default MDXContent;",
         `
         export default function (props) {
-          console.log('components', components);
           const newProps = {
             ...props,
             components
@@ -35,6 +36,6 @@ export default defineConfig({
 
   vite: {
     // Example: Add custom vite plugins directly to your Astro project
-    plugins: [vanillaExtractPlugin()],
+    plugins: [vanillaExtractPlugin(), mdxProvider()],
   },
 });
