@@ -3,4 +3,17 @@ body {
     padding:0;
     margin:0;
     background: radial-gradient(73.75% 106.2% at 5.07% 34.92%, #F9F9F9 0%, #C9CBCC 100%);
+    min-height: 100vh;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.appRoot {
+    flex: 1;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

@@ -23,7 +23,7 @@ export function ThemeProvider({
         toggleTheme,
       }}
     >
-      <div className={`${base.class} ${colorMode}`}>{children}</div>
+      <div className={`appRoot ${base.class} ${colorMode}`}>{children}</div>
     </ThemeContext.Provider>
   );
 }

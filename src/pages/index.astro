@@ -20,15 +20,19 @@ const someProps = {
 
 <DefaultPage title="The blog and portfolio of Ryosuke">
 	<SceneWaves client:visible />
-	<main>
-		<header>
-			<Logo />
-			<MainNav />
-		</header>
-		<Box as="section" paddingTop={10} px={8}>
-			<AboutMe />
-			<ContactCTA />
-		</Box>
-		<Copyright />
-	</main>
+	<Box display="flex" flexDirection="column" justifyContent="space-between" style={{flex:1}}>
+		<main>
+			<header>
+				<Logo />
+				<MainNav />
+			</header>
+			<Box as="section" paddingTop={10} px={8}>
+				<AboutMe />
+				<ContactCTA />
+			</Box>
+		</main>
+		<footer>
+			<Copyright />
+		</footer>
+	</Box>
 </DefaultPage>
