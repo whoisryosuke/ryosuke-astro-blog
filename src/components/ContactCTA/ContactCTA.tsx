@@ -7,7 +7,7 @@ import Text from '../Text/Text'
 const ContactLink = ({children, href, ...props}) => <Link href={href} fontFamily="heading" fontSize={{
   mobile: 1,
   tablet: 2,
-}} {...props}>{children}</Link>
+}} lineHeight={6} {...props}>{children}</Link>
 
 type Props = {}
 

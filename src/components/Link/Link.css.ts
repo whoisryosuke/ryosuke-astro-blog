@@ -53,6 +53,18 @@ export const linkInlineStyles = style({
 });
 
 
+export const linkPlainStyles = style({
+  ":after": {
+    opacity:0,
+  },
+  selectors: {
+    '&:hover:after': {
+      opacity:0,
+    }
+  }
+});
+
+
 export const linkColorPrimaryStyles = style({
   color: themes.tokens.colors.primary.default,
 });
