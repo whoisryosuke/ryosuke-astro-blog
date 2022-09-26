@@ -5,6 +5,7 @@ import Stack from '@/components/Stack/Stack';
 import Link from '@/components/Link/Link';
 import PLAYLIST_DATA, {PLAYLIST_CATEGORIES} from "../../data/playlist"
 import { playlistCategoryStyles } from './Playlist.css';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {}
 
@@ -35,15 +36,25 @@ const Playlist = (props: Props) => {
             </Stack>
         </Box>
         <Stack vertical>
+            
+        <AnimatePresence>
         {filteredPlaylist.map(playlist => 
-            <Link href={playlist.url} underline={false} style={{width:'100%'}} target="_blank">
-                <Box style={{ borderBottom: '1px solid #CCC', display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                    <Box style={{display:'flex',}}><Text fontFamily="heading" fontSize={2} lineHeight={3} fontWeight="bold">{playlist.artist} </Text>
-                    <Text fontFamily="heading" fontSize={2} lineHeight={3} style={{marginLeft: '8px'}}>- {playlist.song}</Text></Box>
-                    <Text>{playlist.category}</Text>
-                </Box>
-            </Link>
+            <motion.div
+                key={playlist.song}
+                initial={{ opacity: 0, translateX: '-1rem' }}
+                animate={{ opacity: 1, translateX: '0' }}
+                exit={{ opacity: 0, translateX: '-1rem' }}
+            >
+                <Link href={playlist.url} underline={false} style={{width:'100%'}} target="_blank">
+                    <Box style={{ borderBottom: '1px solid #CCC', display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                        <Box style={{display:'flex',}}><Text fontFamily="heading" fontSize={2} lineHeight={3} fontWeight="bold">{playlist.artist} </Text>
+                        <Text fontFamily="heading" fontSize={2} lineHeight={3} style={{marginLeft: '8px'}}>- {playlist.song}</Text></Box>
+                        <Text>{playlist.category}</Text>
+                    </Box>
+                </Link>
+            </motion.div>
         )}
+        </AnimatePresence>
         </Stack>
     </>
   )
