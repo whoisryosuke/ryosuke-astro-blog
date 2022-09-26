@@ -19,7 +19,7 @@ const posts = await Astro.glob('./**/*.mdx');
 		tablet: 8
 	}}>
         <Box mb={6}><Text as="h1" fontFamily="heading" fontSize={6}>Blog archive</Text></Box>
-        <Stack>
+        <Stack vertical>
 		{posts.map(post => 
             <Link href={post.url} underline={false} style={{width:'100%'}}>
                 <Box style={{ borderBottom: '1px solid #CCC', display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
