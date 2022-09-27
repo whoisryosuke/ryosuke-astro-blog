@@ -12,7 +12,13 @@ class WaveMaterial extends THREE.ShaderMaterial {
       dithering: true,
       // wireframe: true,
       uniforms: mergeUniforms([
-        { time: { value: 1 }, offset: { value: 0 } },
+        { time: { value: 1 }, offset: { value: 0 }, color: {
+          value: new THREE.Color({
+            r: 0.95,
+            g: 0.95,
+            b: 0.95,
+          })
+        } },
         UniformsLib.lights,
         UniformsLib.fog
       ]),
@@ -54,10 +60,11 @@ class WaveMaterial extends THREE.ShaderMaterial {
       #include <dithering_pars_fragment>
       
       uniform float time;
+      uniform vec3 color;
       void main() {
         // CHANGE THAT TO YOUR NEEDS
         // ------------------------------
-        vec3 finalColor = vec3(0.95, 0.95, 0.95);
+        vec3 finalColor = color;
         vec3 shadowColor = vec3(0, 0, 0);
         float shadowPower = 0.5;
         // ------------------------------
@@ -72,3 +79,7 @@ class WaveMaterial extends THREE.ShaderMaterial {
 }
 
 extend({ WaveMaterial });
+function Color() {
+  throw new Error("Function not implemented.");
+}
+

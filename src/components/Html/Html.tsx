@@ -3,6 +3,7 @@ import Fonts from '../Fonts/Fonts';
 import ThemeProvider from '../ThemeProvider/ThemeProvider';
 import "../../styles/global.css"
 import "normalize.css"
+import { MainNavProvider } from 'src/context/MainNavContext';
 
 type Props = {
     // Title of page (passed to `<head>`)
@@ -21,7 +22,9 @@ const Html = ({title, children}: PropsWithChildren<Props>) => {
         </head>
         <body>
             <ThemeProvider>
-                {children}
+                <MainNavProvider>
+                    {children}
+                </MainNavProvider>
             </ThemeProvider>
         </body>
     </html>

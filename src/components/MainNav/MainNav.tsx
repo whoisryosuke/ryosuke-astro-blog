@@ -1,4 +1,6 @@
 import React, { PropsWithChildren } from 'react'
+import { useMainNav } from 'src/context/MainNavContext'
+import useStore from 'src/store'
 import Box from '../Box/Box'
 import Link from '../Link/Link'
 import Stack from '../Stack/Stack'
@@ -20,6 +22,15 @@ const MainNavItem = ({ href, children, ...props }: PropsWithChildren<MainNavItem
 type Props = {}
 
 const MainNav = (props: Props) => {
+    const { mainNav, setMainNav } = useStore();
+
+    const clearHover = () => {
+        console.log('clearing!')
+        setMainNav('none')
+    }
+
+    console.log('mainNav', mainNav)
+    
   return (
     <Box className={navLayoutStyle}>
         <Box as="nav" className={navContainerStyle}>
@@ -30,7 +41,11 @@ const MainNav = (props: Props) => {
                 <Stack gap="36px" flexDirection={{
                     tablet: "row"
                 }}>
-                    <MainNavItem href="/blog">Writing</MainNavItem>
+                    <MainNavItem 
+                        href="/blog" 
+                        onMouseEnter={() => setMainNav('writing')} 
+                        onMouseLeave={clearHover}
+                    >Writing</MainNavItem>
                     <MainNavItem href="/work">Work</MainNavItem>
                 </Stack>
                 <Stack gap="36px" flexDirection={{

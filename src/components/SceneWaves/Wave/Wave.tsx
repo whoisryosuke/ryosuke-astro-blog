@@ -1,6 +1,7 @@
 import React, { useMemo, useRef } from "react";
 import { MeshProps, useFrame } from "@react-three/fiber";
 import "./material";
+import { Color } from "three"
 
 type WaveProps = MeshProps & {
   offset: number;
@@ -19,6 +20,7 @@ function Wave({ offset, ...props }: WaveProps) {
   useFrame((state) => {
     geom.current.material.uniforms.time.value = state.clock.getElapsedTime();
     geom.current.material.uniforms.offset.value = offset;
+    geom.current.material.uniforms.color.value = new Color('blue');
     // geom.current.geometry.verticesNeedUpdate = true
   });
 

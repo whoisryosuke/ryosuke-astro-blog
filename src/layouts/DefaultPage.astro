@@ -9,12 +9,12 @@ import MainNav from '../components/MainNav/MainNav';
 const { title } = Astro.props;
 ---
 <Html title={title}>
-	<SceneWaves client:visible />
+	<SceneWaves client:load />
 	<Box display="flex" flexDirection="column" justifyContent="space-between" style={{flex:1}}>
 		<main>
 			<header>
 				<Logo />
-				<MainNav />
+				<MainNav client:load />
 			</header>
 			
       <slot />
