@@ -1,8 +1,10 @@
 ---
 title: Ditch the DOM with SolidJS and Skia CanvasKit
-date: "2022-08-05"
-tags: ["solidjs", "skia", "wasm", "javascript", "graphics"]
-cover_image: "./Ditch_the_DOM_with_SolidJS_and_Skia_CanvasKit.png"
+date: '2022-08-05'
+section: blog
+tags: ['solidjs', 'skia', 'wasm', 'javascript', 'graphics']
+cover_image: './Ditch_the_DOM_with_SolidJS_and_Skia_CanvasKit.png'
+
 layout: "@/layouts/BlogLayout.astro"
 ---
 
@@ -16,13 +18,13 @@ It got me thinking — what if you could create a library that uses Skia under t
 
 My goal was to have an library that the developer can write in a JSX syntax and instead of rendering to the DOM (like React for web), we’d render to a `<canvas>` element.
 
-![A screenshot of the SolidJS app rendering to gradient text to the canvas using the CanvasKit API](Ditch_the_DOM_with_SolidJS_and_Skia_CanvasKit.png)
+![A screenshot of the SolidJS app rendering to gradient text to the canvas using the CanvasKit API](Untitled.png)
 
 **Want to see the code or try the demo?** Check out the Github repo for the final code here: [solid-canvaskit-renderer](https://github.com/whoisryosuke/solid-canvaskit-renderer).
 
 # Beat to it
 
-After a little research, I found that someone has already beat me to it for React — **[react-canvaskit](https://github.com/udevbe/react-canvaskit)**. This implementation used [react-reconciler](https://www.npmjs.com/package/react-reconciler) to create a custom renderer for React. This is the same process used by [\*\*react-three-fiber](https://github.com/pmndrs/react-three-fiber/)** (aka **R3F**) to bring [**ThreeJS\*\*](https://threejs.org/) elements to the React VDOM/lifecycle (e.g. when you use `<mesh>`).
+After a little research, I found that someone has already beat me to it for React — [**react-canvaskit**](https://github.com/udevbe/react-canvaskit). This implementation used [react-reconciler](https://www.npmjs.com/package/react-reconciler) to create a custom renderer for React. This is the same process used by [\*\*react-three-fiber](https://github.com/pmndrs/react-three-fiber/)** (aka **R3F**) to bring [**ThreeJS\*\*](https://threejs.org/) elements to the React VDOM/lifecycle (e.g. when you use `<mesh>`).
 
 Basically what react-reconciler does is let you create custom elements that are lowerCamelCase (like `<ambientLight>` or `<skParagraph>`). When these components render, they call a function or class you specify. In **react-canvaskit**, they essentially call the CanvasKit APIs.
 
@@ -30,7 +32,7 @@ The author of **react-canvaskit** did a great job of knocking most of the core a
 
 # SolidJS universal renderer
 
-I had some time to dive into **[SolidJS](https://www.solidjs.com/)** a couple weeks ago, and it seems like a great and [even much faster](https://krausest.github.io/js-framework-benchmark/current.html) alternative to React. It’s basically the same as React — it uses JSX and hooks, with [a couple minor differences.](https://www.solidjs.com/guides/comparison)
+I had some time to dive into [**SolidJS**](https://www.solidjs.com/) a couple weeks ago, and it seems like a great and [even much faster](https://krausest.github.io/js-framework-benchmark/current.html) alternative to React. It’s basically the same as React — it uses JSX and hooks, with [a couple minor differences.](https://www.solidjs.com/guides/comparison)
 
 What really attracted me to **SolidJS** was [the Universal renderer](https://github.com/solidjs/solid/tree/main/packages/solid/universal). It’s like being able to create your own version of React DOM.
 
@@ -60,9 +62,9 @@ With this basis in place, I started to create the renderer. It was honestly a ve
 
 ```jsx
 // example custom dom renderer
-import { createRenderer } from "solid-js/universal";
+import { createRenderer } from 'solid-js/universal'
 
-const PROPERTIES = new Set(["className", "textContent"]);
+const PROPERTIES = new Set(['className', 'textContent'])
 
 export const {
   render,
@@ -78,39 +80,39 @@ export const {
   mergeProps,
 } = createRenderer({
   createElement(string) {
-    return document.createElement(string);
+    return document.createElement(string)
   },
   createTextNode(value) {
-    return document.createTextNode(value);
+    return document.createTextNode(value)
   },
   replaceText(textNode, value) {
-    textNode.data = value;
+    textNode.data = value
   },
   setProperty(node, name, value) {
-    if (name === "style") Object.assign(node.style, value);
-    else if (name.startsWith("on")) node[name.toLowerCase()] = value;
-    else if (PROPERTIES.has(name)) node[name] = value;
-    else node.setAttribute(name, value);
+    if (name === 'style') Object.assign(node.style, value)
+    else if (name.startsWith('on')) node[name.toLowerCase()] = value
+    else if (PROPERTIES.has(name)) node[name] = value
+    else node.setAttribute(name, value)
   },
   insertNode(parent, node, anchor) {
-    parent.insertBefore(node, anchor);
+    parent.insertBefore(node, anchor)
   },
   isTextNode(node) {
-    return node.type === 3;
+    return node.type === 3
   },
   removeNode(parent, node) {
-    parent.removeChild(node);
+    parent.removeChild(node)
   },
   getParentNode(node) {
-    return node.parentNode;
+    return node.parentNode
   },
   getFirstChild(node) {
-    return node.firstChild;
+    return node.firstChild
   },
   getNextSibling(node) {
-    return node.nextSibling;
+    return node.nextSibling
   },
-});
+})
 ```
 
 My first order of action was to take each method and `console.log` out the parameters. It’d give me an idea of when things ran, and what was needed when.
@@ -124,26 +126,26 @@ createElement(string) {
 I quickly discovered my monorepo wasn’t configured appropriately, and I needed to [define a custom Babel config](https://github.com/whoisryosuke/solid-canvaskit-renderer/blob/e6d43313d1723096f599eb6d6e5e391124eeeeeb/packages/demo/vite.config.js#L8-L17) that pointed Solid to my custom renderer. Shoutout to the [**SolidJS** Discord community](https://discord.com/invite/solidjs) for the protip:
 
 ```jsx
-import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
+import { defineConfig } from 'vite'
+import solidPlugin from 'vite-plugin-solid'
 
 export default defineConfig({
   plugins: [
     solidPlugin({
       solid: {
-        generate: "universal",
+        generate: 'universal',
 
         renderers: [
           {
-            name: "universal",
-            moduleName: "solid-canvaskit-renderer",
+            name: 'universal',
+            moduleName: 'solid-canvaskit-renderer',
             elements: [],
           },
         ],
       },
     }),
   ],
-});
+})
 ```
 
 Without this config, **SolidJS** kept using the DOM, so when I created `<testelement>` - the DOM actually made one (instead of calling my `createElement` method in my custom renderer).
@@ -158,7 +160,7 @@ function App() {
     <skCanvas>
       <skGradient />
     </skCanvas>
-  );
+  )
 }
 ```
 
@@ -239,12 +241,12 @@ export class SkNode implements SkBase {
   render() {}
 
   // Component props (aka React/Solid props)
-  props: Map<string, any> = new Map();
+  props: Map<string, any> = new Map()
   setProp(name: string, value: any) {
-    this.props.set(name, value);
+    this.props.set(name, value)
   }
   getProp(name: string) {
-    this.props.get(name);
+    this.props.get(name)
   }
 }
 ```
@@ -252,14 +254,14 @@ export class SkNode implements SkBase {
 Very simple getter/setter methods using a `Map` to store the props. And with that, I was able to set properties with the renderer `setProperty` method, and then access them in the component class using `this.props.get(propName)`:
 
 ```jsx
-import store from "../store";
-import { SkNode } from "./SkNode";
+import store from '../store'
+import { SkNode } from './SkNode'
 
 export default class SkGradient extends SkNode {
   render() {
     // ...code cut out...
 
-    const colors = this.props.get("color") ?? ["RED", "GREEN", "BLUE"];
+    const colors = this.props.get('color') ?? ['RED', 'GREEN', 'BLUE']
 
     // ...code cut out...
   }
@@ -305,3 +307,4 @@ Ryo
 - [canvaskit-wasm on NPM](https://www.npmjs.com/package/canvaskit-wasm)
 - [Skia C++ Examples](https://github.com/google/skia/blob/1f193df9b393d50da39570dab77a0bb5d28ec8ef/modules/canvaskit/npm_build/example.html)
 - [SolidJS](https://www.solidjs.com/)
+- [Webpack 5 breaks dynamic wasm i
