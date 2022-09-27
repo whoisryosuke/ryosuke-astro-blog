@@ -19,10 +19,9 @@ const ContactCTA = (props: Props) => {
           tablet: 3
         }} style={{marginBottom:'8px'}}>DMs are open</Text>
         <Stack gap="16px">
-            <ContactLink href="#">Email</ContactLink>
-            <ContactLink href="#">Twitter</ContactLink>
-            <ContactLink href="#">Instagram</ContactLink>
-            <ContactLink href="#">LinkedIn</ContactLink>
+            <ContactLink href="https://twitter.com/whoisryosuke">Twitter</ContactLink>
+            <ContactLink href="https://instagram.com/whoisryosuke">Instagram</ContactLink>
+            <ContactLink href="https://linkedin.com/in/whoisryosuke">LinkedIn</ContactLink>
         </Stack>
     </Box>
   )
