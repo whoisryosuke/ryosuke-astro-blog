@@ -1,21 +1,25 @@
 ---
 // Component Imports
-import Box from '../components/Box/Box';
-import Text from '../components/Text/Text';
-import AboutMe from '../components/AboutMe/AboutMe';
-import ContactCTA from '../components/ContactCTA/ContactCTA';
-import DefaultPage from '../layouts/DefaultPage.astro';
+import Box from "../components/Box/Box";
+import Text from "../components/Text/Text";
+import AboutMe from "../components/AboutMe/AboutMe";
+import ContactCTA from "../components/ContactCTA/ContactCTA";
+import DefaultPage from "../layouts/DefaultPage.astro";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <DefaultPage title="The blog and portfolio of Ryosuke">
-	<Box as="section" paddingTop={10} px={{
-		mobile: 4,
-		tablet: 8
-	}}>
-		<Text as="h1" fontFamily="heading" fontSize={6} lineHeight={8}>Work</Text>
-		<Text>Life is an NDA.</Text>
-	</Box>
+  <Box
+    as="section"
+    paddingTop={10}
+    px={{
+      mobile: 4,
+      tablet: 8,
+    }}
+  >
+    <Text as="h1" fontFamily="heading" fontSize={6} lineHeight={8}>Work</Text>
+    <Text>Life is an NDA.</Text>
+  </Box>
 </DefaultPage>

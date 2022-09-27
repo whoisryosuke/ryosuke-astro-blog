@@ -1,23 +1,25 @@
 ---
 // Component Imports
-import Box from '@/components/Box/Box';
-import Text from '@/components/Text/Text';
-import AboutMe from '@/components/AboutMe/AboutMe';
-import ContactCTA from '@/components/ContactCTA/ContactCTA';
-import Playlist from '@/components/Playlist/Playlist';
-import DefaultPage from '@/layouts/DefaultPage.astro';
-import Stack from '@/components/Stack/Stack';
-import Link from '@/components/Link/Link';
-import PLAYLIST_DATA, {PLAYLIST_CATEGORIES} from "../data/playlist"
-
-
+import Box from "@/components/Box/Box";
+import Text from "@/components/Text/Text";
+import AboutMe from "@/components/AboutMe/AboutMe";
+import ContactCTA from "@/components/ContactCTA/ContactCTA";
+import Playlist from "@/components/Playlist/Playlist";
+import DefaultPage from "@/layouts/DefaultPage.astro";
+import Stack from "@/components/Stack/Stack";
+import Link from "@/components/Link/Link";
+import PLAYLIST_DATA, { PLAYLIST_CATEGORIES } from "../data/playlist";
 ---
 
 <DefaultPage title="The blog and portfolio of Ryosuke">
-	<Box as="section" paddingTop={10} px={{
-		mobile: 4,
-		tablet: 8
-	}}>
-        <Playlist client:load />
-	</Box>
+  <Box
+    as="section"
+    paddingTop={10}
+    px={{
+      mobile: 4,
+      tablet: 8,
+    }}
+  >
+    <Playlist client:load />
+  </Box>
 </DefaultPage>

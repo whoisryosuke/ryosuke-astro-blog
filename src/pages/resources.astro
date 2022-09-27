@@ -1,54 +1,93 @@
 ---
 // Component Imports
-import Box from '@/components/Box/Box';
-import Text from '@/components/Text/Text';
-import AboutMe from '@/components/AboutMe/AboutMe';
-import ContactCTA from '@/components/ContactCTA/ContactCTA';
-import DefaultPage from '@/layouts/DefaultPage.astro';
-import Stack from '@/components/Stack/Stack';
-import Link from '@/components/Link/Link';
-import DESIGN_RESOURCES from "../data/resources/design.json"
-import DEV_RESOURCES from "../data/resources/development.json"
+import Box from "@/components/Box/Box";
+import Text from "@/components/Text/Text";
+import AboutMe from "@/components/AboutMe/AboutMe";
+import ContactCTA from "@/components/ContactCTA/ContactCTA";
+import DefaultPage from "@/layouts/DefaultPage.astro";
+import Stack from "@/components/Stack/Stack";
+import Link from "@/components/Link/Link";
+import DESIGN_RESOURCES from "../data/resources/design.json";
+import DEV_RESOURCES from "../data/resources/development.json";
 
 const resources = {
-    ...DESIGN_RESOURCES.resources,
-    ...DEV_RESOURCES.resources,
-}
-
-
+  ...DESIGN_RESOURCES.resources,
+  ...DEV_RESOURCES.resources,
+};
 ---
 
 <DefaultPage title="The blog and portfolio of Ryosuke">
-	<Box as="section" paddingTop={10} px={{
-		mobile: 4,
-		tablet: 8
-	}}>
-        <Box mb={8}><Text as="h1" fontFamily="heading" fontSize={6}>Resources</Text></Box>
-        <Box mb={6}>
-            <Box mb={4}><Text as="h1" fontFamily="heading" fontSize={4}>Development</Text></Box>
-            <Stack vertical>
-            {resources.development.map(resource => 
-                <Link href={resource.link} underline={false} style={{width:'100%'}} target="_blank">
-                    <Box style={{ borderBottom: '1px solid #CCC', display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                        <Text fontFamily="heading" fontSize={2} lineHeight={3}>{resource.name}</Text>
-                        <Text>{resource.software.join(', ')}</Text>
-                    </Box>
-                </Link>
-            )}
-            </Stack>
-        </Box>
-
-        <Box mb={4}><Text as="h1" fontFamily="heading" fontSize={4}>Design</Text></Box>
-        <Stack vertical>
-		{resources.design.map(resource => 
-            <Link href={resource.link} underline={false} style={{width:'100%'}} target="_blank">
-                <Box style={{ borderBottom: '1px solid #CCC', display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                    <Text fontFamily="heading" fontSize={2} lineHeight={3}>{resource.name}</Text>
-                    <Text>{resource.category}</Text>
-                </Box>
+  <Box
+    as="section"
+    paddingTop={10}
+    px={{
+      mobile: 4,
+      tablet: 8,
+    }}
+  >
+    <Box mb={8}
+      ><Text as="h1" fontFamily="heading" fontSize={6}>Resources</Text>
+    </Box>
+    <Box mb={6}>
+      <Box mb={4}
+        ><Text as="h1" fontFamily="heading" fontSize={4}>Development</Text>
+      </Box>
+      <Stack vertical>
+        {
+          resources.development.map((resource) => (
+            <Link
+              href={resource.link}
+              underline={false}
+              style={{ width: "100%" }}
+              target="_blank"
+            >
+              <Box
+                style={{
+                  borderBottom: "1px solid #CCC",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <Text fontFamily="heading" fontSize={2} lineHeight={3}>
+                  {resource.name}
+                </Text>
+                <Text>{resource.software.join(", ")}</Text>
+              </Box>
             </Link>
-        )}
-        </Stack>
+          ))
+        }
+      </Stack>
+    </Box>
 
-	</Box>
+    <Box mb={4}
+      ><Text as="h1" fontFamily="heading" fontSize={4}>Design</Text>
+    </Box>
+    <Stack vertical>
+      {
+        resources.design.map((resource) => (
+          <Link
+            href={resource.link}
+            underline={false}
+            style={{ width: "100%" }}
+            target="_blank"
+          >
+            <Box
+              style={{
+                borderBottom: "1px solid #CCC",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Text fontFamily="heading" fontSize={2} lineHeight={3}>
+                {resource.name}
+              </Text>
+              <Text>{resource.category}</Text>
+            </Box>
+          </Link>
+        ))
+      }
+    </Stack>
+  </Box>
 </DefaultPage>

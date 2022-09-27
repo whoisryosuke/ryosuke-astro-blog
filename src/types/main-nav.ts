@@ -2,5 +2,5 @@ export type MainNavNames =
   | "none"
   | "writing"
   | "work"
-  | "resouces"
+  | "resources"
   | "playlist";

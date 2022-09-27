@@ -60,7 +60,13 @@ const MainNav = (props: Props) => {
             >
               Writing
             </MainNavItem>
-            <MainNavItem href="/work">Work</MainNavItem>
+            <MainNavItem
+              href="/work"
+              onMouseEnter={() => setMainNav("work")}
+              onMouseLeave={clearHover}
+            >
+              Work
+            </MainNavItem>
           </Stack>
           <Stack
             gap="36px"
@@ -68,8 +74,20 @@ const MainNav = (props: Props) => {
               tablet: "row",
             }}
           >
-            <MainNavItem href="/resources">Resources</MainNavItem>
-            <MainNavItem href="/playlist">Playlist</MainNavItem>
+            <MainNavItem
+              href="/resources"
+              onMouseEnter={() => setMainNav("resources")}
+              onMouseLeave={clearHover}
+            >
+              Resources
+            </MainNavItem>
+            <MainNavItem
+              href="/playlist"
+              onMouseEnter={() => setMainNav("playlist")}
+              onMouseLeave={clearHover}
+            >
+              Playlist
+            </MainNavItem>
           </Stack>
         </Stack>
       </Box>

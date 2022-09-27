@@ -1,26 +1,25 @@
 ---
-import clsx from "clsx"
-import Box from '@/components/Box/Box';
-import Link from '@/components/Link/Link';
-import Text from '@/components/Text/Text';
-import Avatar from '@/components/Avatar/Avatar';
-import DefaultPage from "./DefaultPage.astro"
-import { glassFadeStyle, glassStyles } from '@/styles/glass.css';
+import clsx from "clsx";
+import Box from "@/components/Box/Box";
+import Link from "@/components/Link/Link";
+import Text from "@/components/Text/Text";
+import Avatar from "@/components/Avatar/Avatar";
+import DefaultPage from "./DefaultPage.astro";
+import { glassFadeStyle, glassStyles } from "@/styles/glass.css";
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter } = Astro.props;
 ---
+
 <DefaultPage title={frontmatter.title}>
-
-
-	<Box 
-    as="section" 
+  <Box
+    as="section"
     width={{
       mobile: 3,
       tablet: 6,
       desktop: 8,
       widescreen: 11,
     }}
-    paddingTop={10} 
+    paddingTop={10}
     px={{
       mobile: 1,
       tablet: 4,
@@ -29,23 +28,28 @@ const { frontmatter } = Astro.props;
     }}
   >
     <Box
-    px={{
-      mobile: 2,
-      tablet: 4
-    }}
-    className={clsx(glassStyles,glassFadeStyle)}>
-      <Box 
-        display="flex" 
-        alignItems={{mobile: "flex-start", tablet: "flex-end" }}
+      px={{
+        mobile: 2,
+        tablet: 4,
+      }}
+      className={clsx(glassStyles, glassFadeStyle)}
+    >
+      <Box
+        display="flex"
+        alignItems={{ mobile: "flex-start", tablet: "flex-end" }}
         justifyContent="space-between"
         marginBottom={8}
-        flexDirection={{mobile: "column", tablet: "row"}}
+        flexDirection={{ mobile: "column", tablet: "row" }}
       >
-        <Box
-          width={{mobile: 2,
-          tablet: 6}}
-        >
-          <Text as="h1" fontFamily="heading" fontSize={6} lineHeight={7} style={{marginBottom:0}}>{frontmatter.title}</Text>
+        <Box width={{ mobile: 2, tablet: 6 }}>
+          <Text
+            as="h1"
+            fontFamily="heading"
+            fontSize={6}
+            lineHeight={7}
+            style={{ marginBottom: 0 }}
+            >{frontmatter.title}
+          </Text>
         </Box>
 
         <Box as="section" id="published_date">
@@ -56,25 +60,54 @@ const { frontmatter } = Astro.props;
 
       <slot />
 
-      <Box 
-        display="flex" 
+      <Box
+        display="flex"
         justifyContent="space-between"
-        flexDirection={{mobile: "column", tablet: "row"}}
+        flexDirection={{ mobile: "column", tablet: "row" }}
       >
-        <Box mr={{mobile: 0, tablet: 3}} mb={{mobile: 3, tablet: 0}}>
-          <Text as="h3" fontFamily="heading" fontSize={4} lineHeight={5} style={{marginBottom:0}}>Tags</Text>
-          {frontmatter.tags.map(tag => <Link href={`/tagged/${tag}`} fontFamily="heading" fontSize={3} lineHeight={6}>#{tag}</Link>)}
+        <Box mr={{ mobile: 0, tablet: 3 }} mb={{ mobile: 3, tablet: 0 }}>
+          <Text
+            as="h3"
+            fontFamily="heading"
+            fontSize={4}
+            lineHeight={5}
+            style={{ marginBottom: 0 }}>Tags</Text
+          >
+          {
+            frontmatter.tags.map((tag) => (
+              <Link
+                href={`/tagged/${tag}`}
+                fontFamily="heading"
+                fontSize={3}
+                lineHeight={6}
+              >
+                #{tag}
+              </Link>
+            ))
+          }
         </Box>
         <Box display="flex">
           <Box mr={3}>
             <Avatar size={120} />
           </Box>
           <Box>
-            <Text fontFamily="heading" fontSize={3} lineHeight={4} style={{marginBottom:0}}>Ryosuke</Text>
-            <Link href="http://twitter.com/whoisryosuke" ghost fontFamily="heading" fontSize={2} lineHeight={5} color="primary">@whoisryosuke</Link>
+            <Text
+              fontFamily="heading"
+              fontSize={3}
+              lineHeight={4}
+              style={{ marginBottom: 0 }}>Ryosuke</Text
+            >
+            <Link
+              href="http://twitter.com/whoisryosuke"
+              ghost
+              fontFamily="heading"
+              fontSize={2}
+              lineHeight={5}
+              color="primary">@whoisryosuke</Link
+            >
           </Box>
         </Box>
       </Box>
     </Box>
-	</Box>
+  </Box>
 </DefaultPage>

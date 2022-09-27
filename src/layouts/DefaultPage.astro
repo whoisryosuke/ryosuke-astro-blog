@@ -1,27 +1,32 @@
 ---
-import Html from "../components/Html/Html"
-import Box from '../components/Box/Box';
-import Copyright from '../components/Copyright/Copyright';
-import Logo from '../components/Logo/Logo';
-import SceneWaves from '../components/SceneWaves/SceneWaves';
-import MainNav from '../components/MainNav/MainNav';
+import Html from "../components/Html/Html";
+import Box from "../components/Box/Box";
+import Copyright from "../components/Copyright/Copyright";
+import Logo from "../components/Logo/Logo";
+import SceneWaves from "../components/SceneWaves/SceneWaves";
+import MainNav from "../components/MainNav/MainNav";
 
 const { title } = Astro.props;
 ---
+
 <Html title={title}>
-	<SceneWaves client:load />
-	<Box display="flex" flexDirection="column" justifyContent="space-between" style={{flex:1}}>
-		<main>
-			<header>
-				<Logo />
-				<MainNav client:load />
-			</header>
-			
+  <SceneWaves client:load />
+  <Box
+    display="flex"
+    flexDirection="column"
+    justifyContent="space-between"
+    style={{ flex: 1 }}
+  >
+    <main>
+      <header>
+        <Logo />
+        <MainNav client:load />
+      </header>
+
       <slot />
-      
-		</main>
-		<footer>
-			<Copyright />
-		</footer>
-	</Box>
+    </main>
+    <footer>
+      <Copyright />
+    </footer>
+  </Box>
 </Html>
