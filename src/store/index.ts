@@ -1,6 +1,6 @@
-import { MainNavNames } from 'src/types/main-nav';
-import create from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
+import { MainNavNames } from "src/types/main-nav";
+import create from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
 export type MainNavContextValue = {
   mainNav: MainNavNames;
@@ -8,22 +8,22 @@ export type MainNavContextValue = {
 };
 
 interface AppState {
-  mainNav: MainNavNames
-  setMainNav: (name: MainNavNames) => void
+  mainNav: MainNavNames;
+  setMainNav: (name: MainNavNames) => void;
 }
 
 const useStore = create<AppState>()(
   devtools(
     persist(
       (set) => ({
-        mainNav: 'none',
+        mainNav: "none",
         setMainNav: (mainNav) => set((state) => ({ mainNav })),
       }),
       {
-        name: 'whoisryosuke-store',
+        name: "whoisryosuke-store",
       }
     )
   )
-)
+);
 
-export default useStore
+export default useStore;

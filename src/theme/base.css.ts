@@ -1,11 +1,11 @@
-import { createTheme } from '@vanilla-extract/css';
+import { createTheme } from "@vanilla-extract/css";
 import {
   ANIMATION,
   BREAKPOINTS,
   SPACE_PROPERTIES,
   FONTS,
   FONT_SIZE_PROPERTIES,
-} from './tokens';
+} from "./tokens";
 
 const [baseTheme, baseVars] = createTheme({
   fonts: FONTS,

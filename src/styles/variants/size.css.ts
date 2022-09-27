@@ -1,5 +1,5 @@
-import { styleVariants } from '@vanilla-extract/css';
-import { base } from '../../theme';
+import { styleVariants } from "@vanilla-extract/css";
+import { base } from "../../theme";
 
 export const sizeVariants = styleVariants({
   tiny: {

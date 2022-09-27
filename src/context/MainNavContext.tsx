@@ -1,13 +1,18 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
-export type MainNavNames = 'none' | 'writing' | 'work' | 'resouces' | 'playlist';
+export type MainNavNames =
+  | "none"
+  | "writing"
+  | "work"
+  | "resouces"
+  | "playlist";
 export type MainNavContextValue = {
   mainNav: MainNavNames;
   setMainNav: any;
 };
 
 export const MainNavContext = createContext<MainNavContextValue>({
-  mainNav: 'none',
+  mainNav: "none",
   setMainNav: null,
 });
 
@@ -18,10 +23,10 @@ export interface MainNavProviderProps {}
 export function MainNavProvider({
   children,
 }: React.PropsWithChildren<MainNavProviderProps>) {
-  const [selectedMainNav, setSelectedMainNav] = useState<MainNavNames>('none');
+  const [selectedMainNav, setSelectedMainNav] = useState<MainNavNames>("none");
 
   const setMainNav = (name: MainNavNames) => {
-    console.log('toggling mainNav', name)
+    console.log("toggling mainNav", name);
     setSelectedMainNav(name);
   };
 

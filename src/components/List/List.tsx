@@ -1,12 +1,10 @@
-import React, { PropsWithChildren } from 'react'
-import { Box } from '../Box/Box'
+import React, { PropsWithChildren } from "react";
+import { Box } from "../Box/Box";
 
-type Props = {}
+type Props = {};
 
-const List = ({children, ...props}: PropsWithChildren<Props>) => {
-  return (
-    <Box as="ul">{children}</Box>
-  )
-}
+const List = ({ children, ...props }: PropsWithChildren<Props>) => {
+  return <Box as="ul">{children}</Box>;
+};
 
-export default List
+export default List;

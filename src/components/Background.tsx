@@ -1,14 +1,18 @@
-import React, { PropsWithChildren } from 'react'
+import React, { PropsWithChildren } from "react";
 
-type Props = {}
+type Props = {};
 
-const Background = ({children}: PropsWithChildren<Props>) => {
+const Background = ({ children }: PropsWithChildren<Props>) => {
   return (
-    <div style={{
-        width: '100vw',
-        height: '100vh',
-    }}>{children}</div>
-  )
-}
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
-export default Background
+export default Background;

@@ -1,26 +1,26 @@
-import { textStyles } from './Text.css';
-import clsx from 'clsx';
+import { textStyles } from "./Text.css";
+import clsx from "clsx";
 import {
   fontSizeUtilityStyles,
   FontSizeUtilityStyles,
-} from '../../styles/utility-styles/fontSizes.css';
+} from "../../styles/utility-styles/fontSizes.css";
 
 /* eslint-disable-next-line */
 export interface TextProps<ComponentType extends React.ElementType> {
   as?: ComponentType;
   children: React.ReactNode;
-  fontSize?: FontSizeUtilityStyles['fontSize'];
-  fontFamily?: FontSizeUtilityStyles['fontFamily'];
-  fontWeight?: FontSizeUtilityStyles['fontWeight'];
-  lineHeight?: FontSizeUtilityStyles['lineHeight'];
+  fontSize?: FontSizeUtilityStyles["fontSize"];
+  fontFamily?: FontSizeUtilityStyles["fontFamily"];
+  fontWeight?: FontSizeUtilityStyles["fontWeight"];
+  lineHeight?: FontSizeUtilityStyles["lineHeight"];
   className?: string;
 }
 
 export function Text<ComponentType extends React.ElementType>({
   children,
   fontSize = 1,
-  fontFamily = 'body',
-  fontWeight = 'regular',
+  fontFamily = "body",
+  fontWeight = "regular",
   lineHeight = 1,
   className,
   ...restProps
@@ -35,9 +35,12 @@ export function Text<ComponentType extends React.ElementType>({
   const { as, ...props } = restProps;
   // Decide the component type based on `as` prop
   // You can't use `as` alone - protected word in TS - so we use it from `restProps`
-  const Component = restProps.as ?? 'p' as React.ElementType
+  const Component = restProps.as ?? ("p" as React.ElementType);
   return (
-    <Component className={clsx(textStyles, fontSizeUtilityStyles(fontProps), className)} {...props}>
+    <Component
+      className={clsx(textStyles, fontSizeUtilityStyles(fontProps), className)}
+      {...props}
+    >
       {children}
     </Component>
   );

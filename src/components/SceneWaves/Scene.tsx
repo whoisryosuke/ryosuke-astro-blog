@@ -1,7 +1,7 @@
-import React from 'react'
-import Waves from './Waves'
+import React from "react";
+import Waves from "./Waves";
 
-type Props = {}
+type Props = {};
 
 const Scene = (props: Props) => {
   return (
@@ -16,7 +16,7 @@ const Scene = (props: Props) => {
       </Stage> */}
       <Waves />
     </>
-  )
-}
+  );
+};
 
-export default Scene
+export default Scene;

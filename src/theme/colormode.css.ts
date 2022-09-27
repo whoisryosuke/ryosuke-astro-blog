@@ -1,46 +1,46 @@
-import { createThemeContract } from '@vanilla-extract/css';
+import { createThemeContract } from "@vanilla-extract/css";
 
 const colors = {
-  text: '',
-  reading: '',
-  background: '',
+  text: "",
+  reading: "",
+  background: "",
   primary: {
-    default: '',
-    hovered: '',
-    pressed: '',
+    default: "",
+    hovered: "",
+    pressed: "",
   },
-  glass: '',
+  glass: "",
   // secondary: '',
-  muted: '',
-  highlight: '',
+  muted: "",
+  highlight: "",
 
-  success: '',
-  message: '',
-  warning: '',
-  danger: '',
+  success: "",
+  message: "",
+  warning: "",
+  danger: "",
 };
 
 const gradients = {
   // subtle: '',
   // purple: '',
   blue: {
-    default: '',
-    hover: '',
+    default: "",
+    hover: "",
   },
   text: {
     blue: {
-      default: '',
-      hover: '',
+      default: "",
+      hover: "",
     },
     text: {
-      default: '',
-      hover: '',
+      default: "",
+      hover: "",
     },
     invert: {
-      default: '',
-      hover: '',
-    }
-  }
+      default: "",
+      hover: "",
+    },
+  },
 };
 
 export const colorTokens = createThemeContract({

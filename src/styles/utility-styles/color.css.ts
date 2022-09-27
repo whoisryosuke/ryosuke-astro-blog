@@ -1,13 +1,13 @@
-import { colorTokens } from '@/theme/colormode.css';
-import { themes } from '@/theme/index';
-import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
+import { colorTokens } from "@/theme/colormode.css";
+import { themes } from "@/theme/index";
+import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 
 const colorProperties = defineProperties({
   conditions: {
     lightMode: {
-      '@media': '(prefers-color-scheme: light)'
+      "@media": "(prefers-color-scheme: light)",
     },
-    darkMode: { '@media': '(prefers-color-scheme: dark)' }
+    darkMode: { "@media": "(prefers-color-scheme: dark)" },
   },
   defaultCondition: false,
   properties: {

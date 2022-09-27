@@ -1,6 +1,6 @@
-import { ThemeContext, ThemeNames } from '../../context/theme';
-import { useState } from 'react';
-import { themes, base } from '../../theme';
+import { ThemeContext, ThemeNames } from "../../context/theme";
+import { useState } from "react";
+import { themes, base } from "../../theme";
 
 /* eslint-disable-next-line */
 export interface ThemeProviderProps {}
@@ -8,14 +8,14 @@ export interface ThemeProviderProps {}
 export function ThemeProvider({
   children,
 }: React.PropsWithChildren<ThemeProviderProps>) {
-  const [selectedTheme, setSelectedTheme] = useState<ThemeNames>('light');
+  const [selectedTheme, setSelectedTheme] = useState<ThemeNames>("light");
 
   const toggleTheme = () => {
-    console.log('toggling theme')
-    setSelectedTheme((prevValue) => (prevValue === 'light' ? 'dark' : 'light'));
+    console.log("toggling theme");
+    setSelectedTheme((prevValue) => (prevValue === "light" ? "dark" : "light"));
   };
 
-  const colorMode = selectedTheme === 'light' ? themes.light : themes.dark;
+  const colorMode = selectedTheme === "light" ? themes.light : themes.dark;
   return (
     <ThemeContext.Provider
       value={{

@@ -1,15 +1,15 @@
-import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
+import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import {
   FONTS,
   FONT_SIZE_PROPERTIES,
   FONT_WEIGHTS,
   MEDIA_QUERIES,
   SPACE_PROPERTIES,
-} from '../../theme/tokens';
+} from "../../theme/tokens";
 
 const responsiveProperties = defineProperties({
   conditions: MEDIA_QUERIES,
-  defaultCondition: 'mobile',
+  defaultCondition: "mobile",
   properties: {
     fontSize: FONT_SIZE_PROPERTIES,
     fontFamily: FONTS,

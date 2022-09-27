@@ -1,1 +1,1 @@
-export * from './status.css';
+export * from "./status.css";

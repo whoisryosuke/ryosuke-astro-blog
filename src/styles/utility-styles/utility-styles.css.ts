@@ -1,21 +1,25 @@
-import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
-import { COLUMN_PROPERTIES, MEDIA_QUERIES, SPACE_PROPERTIES } from '../../theme/tokens';
+import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
+import {
+  COLUMN_PROPERTIES,
+  MEDIA_QUERIES,
+  SPACE_PROPERTIES,
+} from "../../theme/tokens";
 
 const responsiveProperties = defineProperties({
   conditions: MEDIA_QUERIES,
-  defaultCondition: 'mobile',
+  defaultCondition: "mobile",
   properties: {
-    display: ['none', 'flex', 'block', 'inline'],
-    flexDirection: ['row', 'column'],
+    display: ["none", "flex", "block", "inline"],
+    flexDirection: ["row", "column"],
     justifyContent: [
-      'stretch',
-      'flex-start',
-      'center',
-      'flex-end',
-      'space-around',
-      'space-between',
+      "stretch",
+      "flex-start",
+      "center",
+      "flex-end",
+      "space-around",
+      "space-between",
     ],
-    alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
+    alignItems: ["stretch", "flex-start", "center", "flex-end"],
     width: COLUMN_PROPERTIES,
     height: COLUMN_PROPERTIES,
     paddingTop: SPACE_PROPERTIES,
@@ -28,13 +32,13 @@ const responsiveProperties = defineProperties({
     marginRight: SPACE_PROPERTIES,
   },
   shorthands: {
-    padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
-    paddingX: ['paddingLeft', 'paddingRight'],
-    paddingY: ['paddingTop', 'paddingBottom'],
-    margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
-    marginX: ['marginLeft', 'marginRight'],
-    marginY: ['marginTop', 'marginBottom'],
-    placeItems: ['justifyContent', 'alignItems'],
+    padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
+    paddingX: ["paddingLeft", "paddingRight"],
+    paddingY: ["paddingTop", "paddingBottom"],
+    margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    marginX: ["marginLeft", "marginRight"],
+    marginY: ["marginTop", "marginBottom"],
+    placeItems: ["justifyContent", "alignItems"],
   },
 });
 

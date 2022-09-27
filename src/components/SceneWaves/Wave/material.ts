@@ -12,15 +12,19 @@ class WaveMaterial extends THREE.ShaderMaterial {
       dithering: true,
       // wireframe: true,
       uniforms: mergeUniforms([
-        { time: { value: 1 }, offset: { value: 0 }, color: {
-          value: new THREE.Color({
-            r: 0.95,
-            g: 0.95,
-            b: 0.95,
-          })
-        } },
+        {
+          time: { value: 1 },
+          offset: { value: 0 },
+          color: {
+            value: new THREE.Color({
+              r: 0.95,
+              g: 0.95,
+              b: 0.95,
+            }),
+          },
+        },
         UniformsLib.lights,
-        UniformsLib.fog
+        UniformsLib.fog,
       ]),
       vertexShader: `
       
@@ -73,7 +77,7 @@ class WaveMaterial extends THREE.ShaderMaterial {
         gl_FragColor = vec4( mix(finalColor, shadowColor, (1.0 - getShadowMask() ) * shadowPower), 1.0);
         #include <fog_fragment>
         #include <dithering_fragment>
-      }`
+      }`,
     });
   }
 }
@@ -82,4 +86,3 @@ extend({ WaveMaterial });
 function Color() {
   throw new Error("Function not implemented.");
 }
-
