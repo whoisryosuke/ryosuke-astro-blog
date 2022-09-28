@@ -9,7 +9,7 @@ import Scene from "./Scene";
 type Props = {};
 
 export const SceneWaves = (props: Props) => {
-  const {theme} = useStore();
+  const { theme } = useStore();
   return (
     <Box
       height={{

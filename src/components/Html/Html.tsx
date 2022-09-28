@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import Fonts from "../Fonts/Fonts";
 import ThemeProvider from "../ThemeProvider/ThemeProvider";
-import "../../styles/global.css";
 import "normalize.css";
 import { MainNavProvider } from "src/context/MainNavContext";
 import { bodyStyles } from "./Html.css";
@@ -21,9 +20,7 @@ const Html = ({ title, children }: PropsWithChildren<Props>) => {
         <Fonts />
         <title>{title}</title>
       </head>
-      <body className={bodyStyles}>
-          {children}
-      </body>
+      <body className={bodyStyles}>{children}</body>
     </html>
   );
 };

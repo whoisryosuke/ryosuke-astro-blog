@@ -14,17 +14,15 @@ import DEV_RESOURCES from "../data/resources/development.json";
 
 const posts = await Astro.glob("./**/*.mdx");
 const tags = posts.reduce((tagMap, post) => {
-    if(!Array.isArray(post.frontmatter.tags)) return tagMap
-    post.frontmatter.tags.map(tag => {
-        const prevTag = tag in tagMap ? tagMap[tag] : [];
-        tagMap[tag] = [...prevTag, post];
-    })
-    return tagMap
-}, {})
-
+  if (!Array.isArray(post.frontmatter.tags)) return tagMap;
+  post.frontmatter.tags.map((tag) => {
+    const prevTag = tag in tagMap ? tagMap[tag] : [];
+    tagMap[tag] = [...prevTag, post];
+  });
+  return tagMap;
+}, {});
 
 const tagLoop = Object.entries(tags);
-
 ---
 
 <DefaultPage title="The blog and portfolio of Ryosuke">
@@ -40,7 +38,7 @@ const tagLoop = Object.entries(tags);
       ><Text as="h1" fontFamily="heading" fontSize={6}>Tags</Text>
     </Box>
     <Stack vertical>
-    <TagList tagLoop={tagLoop} client:load />
+      <TagList tagLoop={tagLoop} client:load />
     </Stack>
   </Box>
 </DefaultPage>

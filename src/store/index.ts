@@ -24,7 +24,10 @@ const useStore = create<AppState>()(
         setMainNav: (mainNav) => set((state) => ({ mainNav })),
         theme: "light",
         setSelectedTheme: (theme) => set((state) => ({ theme })),
-        toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
+        toggleTheme: () =>
+          set((state) => ({
+            theme: state.theme === "light" ? "dark" : "light",
+          })),
       }),
       {
         name: "whoisryosuke-store",

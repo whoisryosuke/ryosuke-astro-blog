@@ -9,12 +9,10 @@ export interface ThemeProviderProps {}
 export function ThemeProvider({
   children,
 }: React.PropsWithChildren<ThemeProviderProps>) {
-  const {theme} = useStore()
+  const { theme } = useStore();
 
   const colorMode = theme === "light" ? themes.light : themes.dark;
-  return (
-    <div >{children}</div>
-  );
+  return <div>{children}</div>;
 }
 
 export default ThemeProvider;
