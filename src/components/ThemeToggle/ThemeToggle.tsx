@@ -29,27 +29,29 @@ const ThemeToggle = (props: Props) => {
     }
   }, [theme]);
 
-  const setMode = (theme) => setSelectedTheme(theme);
 
   // Check the user's device setting and override with that
   useEffect(() => {
-    const setDarkMode = () => setMode("dark");
-    const setLightMode = () => setMode("light");
+    const setDarkMode = () => setSelectedTheme("dark");
+    const setLightMode = () => setSelectedTheme("light");
+
+    const setMode = (e) => {
+      console.log('device theme detected', theme);
+      if(e.matches) {
+        setDarkMode()
+      } else {
+        setLightMode();
+      }
+    };
 
     window
-      .matchMedia("(prefers-color-scheme: light)")
-      .addEventListener("change", setLightMode);
-    window
       .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", setDarkMode);
+      .addEventListener("change", setMode);
 
     return () => {
       window
-        .matchMedia("(prefers-color-scheme: light)")
-        .removeEventListener("change", setLightMode);
-      window
         .matchMedia("(prefers-color-scheme: dark)")
-        .removeEventListener("change", setDarkMode);
+        .removeEventListener("change", setMode);
     };
   }, []);
 
