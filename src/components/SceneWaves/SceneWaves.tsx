@@ -34,8 +34,6 @@ export const SceneWaves = (props: Props) => {
           far: 1000,
           zoom: 1,
         }}
-        onCreated={({ gl }) => {
-        }}
         shadows
       >
         {/* <Stats /> */}

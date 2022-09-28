@@ -44,9 +44,7 @@ function Wave({ offset, ...props }: WaveProps) {
   // Take the NAV_TO_INDEX and multiply by 2 to adjust for spacing
   // And we add 8 to offset it enough to be in camera view
   const isColored = mainNav !== 'none' && offset === NAV_TO_INDEX[mainNav] * 2 + 8
-
   const themeColor = theme === 'light' ? WAVE_PROPERTIES.color.light : WAVE_PROPERTIES.color.dark
-  console.log('theme color', themeColor)
 
 
   const geom = useRef();
