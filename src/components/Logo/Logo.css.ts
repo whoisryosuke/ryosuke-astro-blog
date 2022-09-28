@@ -6,7 +6,7 @@ export const logoContainerStyles = style({
   position: "absolute",
   top: 126,
   right: -30,
-  zIndex: 710,
+  zIndex: 1000,
   // "Reverse" text and rotate
   transform: "scaleX(-1) rotate(-90deg)",
 
@@ -16,7 +16,7 @@ export const logoContainerStyles = style({
       right: -75,
     },
     [MEDIA_QUERIES.tablet["@media"]]: {
-      top: 126,
+      top: 150,
       right: -30,
     },
   },

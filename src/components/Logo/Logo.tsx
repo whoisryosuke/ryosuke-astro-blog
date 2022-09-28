@@ -13,7 +13,11 @@ const Logo = (props: Props) => {
   return (
     <Box className={logoContainerStyles}>
       <a href="/" className={logoLinkStyles}>
-        <Text fontFamily="heading" fontSize={5} className={logoTextStyles}>
+        <Text fontFamily="heading" fontSize={{
+          mobile: 2,
+          tablet: 3,
+          desktop: 5,
+        }} className={logoTextStyles}>
           Ryosuke
         </Text>
       </a>

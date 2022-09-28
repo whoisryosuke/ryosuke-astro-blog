@@ -32,7 +32,8 @@ export const navContainerStyle = style({
 
   "@media": {
     [MEDIA_QUERIES.mobile["@media"]]: {
-      padding: "15px",
+      padding: "15px 40px",
+      marginRight: base.tokens.space[1],
     },
     [MEDIA_QUERIES.tablet["@media"]]: {
       padding: "15px 80px",
