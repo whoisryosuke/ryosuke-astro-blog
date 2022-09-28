@@ -1,0 +1,46 @@
+---
+// Component Imports
+import Box from "@/components/Box/Box";
+import Accordion from "@/components/Accordion/Accordion";
+import Text from "@/components/Text/Text";
+import AboutMe from "@/components/AboutMe/AboutMe";
+import ContactCTA from "@/components/ContactCTA/ContactCTA";
+import DefaultPage from "@/layouts/DefaultPage.astro";
+import Stack from "@/components/Stack/Stack";
+import TagList from "@/components/TagList/TagList";
+import Link from "@/components/Link/Link";
+import DESIGN_RESOURCES from "../data/resources/design.json";
+import DEV_RESOURCES from "../data/resources/development.json";
+
+const posts = await Astro.glob("./**/*.mdx");
+const tags = posts.reduce((tagMap, post) => {
+    if(!Array.isArray(post.frontmatter.tags)) return tagMap
+    post.frontmatter.tags.map(tag => {
+        const prevTag = tag in tagMap ? tagMap[tag] : [];
+        tagMap[tag] = [...prevTag, post];
+    })
+    return tagMap
+}, {})
+
+
+const tagLoop = Object.entries(tags);
+
+---
+
+<DefaultPage title="The blog and portfolio of Ryosuke">
+  <Box
+    as="section"
+    paddingTop={10}
+    px={{
+      mobile: 4,
+      tablet: 8,
+    }}
+  >
+    <Box mb={8}
+      ><Text as="h1" fontFamily="heading" fontSize={6}>Tags</Text>
+    </Box>
+    <Stack vertical>
+    <TagList tagLoop={tagLoop} client:load />
+    </Stack>
+  </Box>
+</DefaultPage>
