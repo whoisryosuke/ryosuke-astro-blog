@@ -39,14 +39,11 @@ const WAVE_PROPERTIES = {
 function Wave({ offset, ...props }: WaveProps) {
   const {mainNav} = useStore();
 
-  console.log('3d mainNav', mainNav)
-
   // There's 18 waves, we want to do nearest ones and skip between
   // Take the NAV_TO_INDEX and multiply by 2 to adjust for spacing
   // And we add 8 to offset it enough to be in camera view
   const isColored = mainNav !== 'none' && offset === NAV_TO_INDEX[mainNav] * 2 + 8
 
-  console.log('isColored', isColored)
 
   const geom = useRef();
   useFrame((state) => {

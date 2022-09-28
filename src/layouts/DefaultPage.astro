@@ -5,6 +5,8 @@ import Copyright from "../components/Copyright/Copyright";
 import Logo from "../components/Logo/Logo";
 import SceneWaves from "../components/SceneWaves/SceneWaves";
 import MainNav from "../components/MainNav/MainNav";
+import ThemeToggle from "../components/ThemeToggle/ThemeToggle";
+import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 
 const { title } = Astro.props;
 ---
@@ -17,16 +19,19 @@ const { title } = Astro.props;
     justifyContent="space-between"
     style={{ flex: 1 }}
   >
-    <main>
-      <header>
-        <Logo />
-        <MainNav client:load />
-      </header>
+    <ThemeProvider client:load>
+      <main>
+        <header>
+          <Logo />
+          <MainNav client:load />
+          <ThemeToggle client:load />
+        </header>
 
-      <slot />
-    </main>
-    <footer>
-      <Copyright />
-    </footer>
+        <slot />
+      </main>
+      <footer>
+        <Copyright />
+      </footer>
+    </ThemeProvider>
   </Box>
 </Html>

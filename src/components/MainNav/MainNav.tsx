@@ -31,11 +31,8 @@ const MainNav = (props: Props) => {
   const { mainNav, setMainNav } = useStore();
 
   const clearHover = () => {
-    console.log("clearing!");
     setMainNav("none");
   };
-
-  console.log("mainNav", mainNav);
 
   return (
     <Box className={navLayoutStyle}>

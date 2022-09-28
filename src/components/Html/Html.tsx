@@ -21,9 +21,7 @@ const Html = ({ title, children }: PropsWithChildren<Props>) => {
         <title>{title}</title>
       </head>
       <body>
-        <ThemeProvider>
-          <MainNavProvider>{children}</MainNavProvider>
-        </ThemeProvider>
+          {children}
       </body>
     </html>
   );
