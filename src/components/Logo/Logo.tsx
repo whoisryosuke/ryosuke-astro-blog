@@ -1,4 +1,5 @@
 import React from "react";
+import useStore from "src/store";
 import Box from "../Box/Box";
 import Text from "../Text/Text";
 import {
@@ -10,13 +11,19 @@ import {
 type Props = {};
 
 const Logo = (props: Props) => {
+  const { setMainNav } = useStore();
+  const clearHover = () => {
+    setMainNav("none");
+  };
   return (
-    <Box className={logoContainerStyles}>
+    <Box 
+    className={logoContainerStyles} 
+              onMouseEnter={() => setMainNav("logo")}
+              onMouseLeave={clearHover}>
       <a href="/" className={logoLinkStyles}>
         <Text fontFamily="heading" fontSize={{
           mobile: 2,
-          tablet: 3,
-          desktop: 5,
+          tablet: 5,
         }} className={logoTextStyles}>
           Ryosuke
         </Text>

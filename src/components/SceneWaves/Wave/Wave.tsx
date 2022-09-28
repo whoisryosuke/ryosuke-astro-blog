@@ -36,6 +36,7 @@ const WAVE_PROPERTIES = {
     hovered: new Color("#001BD8"),
   },
 };
+const SPEED = 2;
 
 function Wave({ offset, ...props }: WaveProps) {
   const { mainNav, theme } = useStore();
@@ -45,6 +46,7 @@ function Wave({ offset, ...props }: WaveProps) {
   // And we add 8 to offset it enough to be in camera view
   const isColored =
     mainNav !== "none" && offset === NAV_TO_INDEX[mainNav] * 2 + 8;
+
   const themeColor =
     theme === "light"
       ? WAVE_PROPERTIES.color.light
@@ -53,14 +55,24 @@ function Wave({ offset, ...props }: WaveProps) {
   const geom = useRef();
   useFrame((state) => {
     state.gl.setClearColor(theme === "light" ? "#FFF" : "#111");
-
-    geom.current.material.uniforms.time.value = state.clock.getElapsedTime();
+    const time = state.clock.getElapsedTime();
+    geom.current.material.uniforms.time.value = time;
     geom.current.material.uniforms.offset.value = offset;
+
     if (isColored) {
       geom.current.material.uniforms.color.value =
         WAVE_PROPERTIES.color.hovered;
     } else {
       geom.current.material.uniforms.color.value = themeColor;
+    }
+
+    // if(mainNav === 'logo' && offset % Math.round(Math.cos(time * 4) + 1) === 0) {
+    
+    // We light up the bands when user hovers over logo
+    // It's offset by 12 so we don't light up anything off camera
+    if(mainNav === 'logo' && offset === Math.round(Math.cos(time * SPEED) * 4) + 12) {
+      geom.current.material.uniforms.color.value =
+        WAVE_PROPERTIES.color.hovered;
     }
     // geom.current.geometry.verticesNeedUpdate = true
   });

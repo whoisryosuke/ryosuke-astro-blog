@@ -22,7 +22,7 @@ const { title } = Astro.props;
     <ThemeProvider>
       <main>
         <header>
-          <Logo />
+          <Logo client:load />
           <MainNav client:load />
           <ThemeToggle client:load />
         </header>
