@@ -4,6 +4,7 @@ import ThemeProvider from "../ThemeProvider/ThemeProvider";
 import "../../styles/global.css";
 import "normalize.css";
 import { MainNavProvider } from "src/context/MainNavContext";
+import { bodyStyles } from "./Html.css";
 
 type Props = {
   // Title of page (passed to `<head>`)
@@ -20,7 +21,7 @@ const Html = ({ title, children }: PropsWithChildren<Props>) => {
         <Fonts />
         <title>{title}</title>
       </head>
-      <body>
+      <body className={bodyStyles}>
           {children}
       </body>
     </html>

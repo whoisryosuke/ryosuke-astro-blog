@@ -1,4 +1,4 @@
-body {
+/* body {
     overflow-x:hidden;
     padding:0;
     margin:0;
@@ -10,10 +10,10 @@ body {
     justify-content: space-between;
 }
 
-.appRoot {
+#appRoot {
     flex: 1;
 
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */

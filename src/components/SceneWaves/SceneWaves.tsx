@@ -2,12 +2,14 @@ import { OrbitControls, Stats } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import React, { Suspense } from "react";
+import useStore from "src/store";
 import Box from "../Box/Box";
 import Scene from "./Scene";
 
 type Props = {};
 
 export const SceneWaves = (props: Props) => {
+  const {theme} = useStore();
   return (
     <Box
       height={{
@@ -33,7 +35,6 @@ export const SceneWaves = (props: Props) => {
           zoom: 1,
         }}
         onCreated={({ gl }) => {
-          gl.setClearColor("#FFF");
         }}
         shadows
       >

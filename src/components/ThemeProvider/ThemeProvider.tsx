@@ -13,7 +13,7 @@ export function ThemeProvider({
 
   const colorMode = theme === "light" ? themes.light : themes.dark;
   return (
-    <div className={`appRoot ${base.class} ${colorMode}`}>{children}</div>
+    <div >{children}</div>
   );
 }
 

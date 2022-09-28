@@ -27,32 +27,39 @@ const WAVE_SIZE = {
 
 const WAVE_PROPERTIES = {
   color: {
-    default: new Color({
+    light: new Color({
       r: 0.95,
       g: 0.95,
       b: 0.95,
     }),
+    dark: new Color('#000'),
     hovered: new Color('#001BD8'),
   }
 }
 
 function Wave({ offset, ...props }: WaveProps) {
-  const {mainNav} = useStore();
+  const {mainNav, theme} = useStore();
 
   // There's 18 waves, we want to do nearest ones and skip between
   // Take the NAV_TO_INDEX and multiply by 2 to adjust for spacing
   // And we add 8 to offset it enough to be in camera view
   const isColored = mainNav !== 'none' && offset === NAV_TO_INDEX[mainNav] * 2 + 8
 
+  const themeColor = theme === 'light' ? WAVE_PROPERTIES.color.light : WAVE_PROPERTIES.color.dark
+  console.log('theme color', themeColor)
+
 
   const geom = useRef();
   useFrame((state) => {
+    
+    state.gl.setClearColor(theme === 'light' ? "#FFF" : "#111");
+
     geom.current.material.uniforms.time.value = state.clock.getElapsedTime();
     geom.current.material.uniforms.offset.value = offset;
     if(isColored) {
       geom.current.material.uniforms.color.value = WAVE_PROPERTIES.color.hovered;
     } else {
-      geom.current.material.uniforms.color.value = WAVE_PROPERTIES.color.default;
+      geom.current.material.uniforms.color.value = themeColor;
     }
     // geom.current.geometry.verticesNeedUpdate = true
   });

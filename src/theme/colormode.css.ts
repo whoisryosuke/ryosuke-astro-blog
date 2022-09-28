@@ -23,6 +23,7 @@ const colors = {
 const gradients = {
   // subtle: '',
   // purple: '',
+  background: "",
   blue: {
     default: "",
     hover: "",
