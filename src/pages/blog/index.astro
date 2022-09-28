@@ -34,8 +34,9 @@ const postLoop = Object.entries(sortedPosts);
       tablet: 8,
     }}
   >
-    <Box mb={6}
-      ><Text as="h1" fontFamily="heading" fontSize={6}>Blog archive</Text>
+    <Box mb={6}>
+      <Text as="h1" fontFamily="heading" fontSize={6}>Blog archive</Text>
+      <Link href="/tags"><Text as="h3" fontFamily="heading" fontSize={3}>Browse all tags</Text></Link>
     </Box>
     {
       postLoop.reverse().map(([year, yearPosts]) => (
