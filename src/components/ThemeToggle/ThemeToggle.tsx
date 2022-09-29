@@ -31,16 +31,15 @@ const ThemeToggle = (props: Props) => {
     }
   }, [theme]);
 
-
   // Check the user's device setting and override with that
   useEffect(() => {
     const setDarkMode = () => setSelectedTheme("dark");
     const setLightMode = () => setSelectedTheme("light");
 
     const setMode = (e) => {
-      console.log('device theme detected', theme);
-      if(e.matches) {
-        setDarkMode()
+      console.log("device theme detected", theme);
+      if (e.matches) {
+        setDarkMode();
       } else {
         setLightMode();
       }
@@ -57,7 +56,11 @@ const ThemeToggle = (props: Props) => {
     };
   }, []);
 
-  return <button className={buttonStyles} onClick={toggleTheme}>{theme === 'light' ? <TbMoonStars /> : <TbSun />}</button>;
+  return (
+    <button className={buttonStyles} onClick={toggleTheme}>
+      {theme === "light" ? <TbMoonStars /> : <TbSun />}
+    </button>
+  );
 };
 
 export default ThemeToggle;

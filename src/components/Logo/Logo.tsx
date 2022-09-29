@@ -16,15 +16,20 @@ const Logo = (props: Props) => {
     setMainNav("none");
   };
   return (
-    <Box 
-    className={logoContainerStyles} 
-              onMouseEnter={() => setMainNav("logo")}
-              onMouseLeave={clearHover}>
+    <Box
+      className={logoContainerStyles}
+      onMouseEnter={() => setMainNav("logo")}
+      onMouseLeave={clearHover}
+    >
       <a href="/" className={logoLinkStyles}>
-        <Text fontFamily="heading" fontSize={{
-          mobile: 2,
-          tablet: 5,
-        }} className={logoTextStyles}>
+        <Text
+          fontFamily="heading"
+          fontSize={{
+            mobile: 2,
+            tablet: 5,
+          }}
+          className={logoTextStyles}
+        >
           Ryosuke
         </Text>
       </a>

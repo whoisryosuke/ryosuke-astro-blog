@@ -67,10 +67,13 @@ function Wave({ offset, ...props }: WaveProps) {
     }
 
     // if(mainNav === 'logo' && offset % Math.round(Math.cos(time * 4) + 1) === 0) {
-    
+
     // We light up the bands when user hovers over logo
     // It's offset by 12 so we don't light up anything off camera
-    if(mainNav === 'logo' && offset === Math.round(Math.cos(time * SPEED) * 4) + 12) {
+    if (
+      mainNav === "logo" &&
+      offset === Math.round(Math.cos(time * SPEED) * 4) + 12
+    ) {
       geom.current.material.uniforms.color.value =
         WAVE_PROPERTIES.color.hovered;
     }
