@@ -1,9 +1,9 @@
 ---
 title: Refreshing my blog for 2020
-date: '2020-06-18'
+date: "2020-06-18"
 section: blog
-tags: ['gatsby', 'react', 'site updates']
-cover_image: './refreshing-my-blog-for-2020.png'
+tags: ["gatsby", "react", "site updates"]
+cover_image: "./refreshing-my-blog-for-2020.png"
 
 layout: "@/layouts/BlogLayout.astro"
 ---
@@ -16,12 +16,12 @@ Here's a side-by-side screenshot comparsion of the old version (left) and the up
 
 <Box display="flex" flexDirection={['column','column', 'row']}>
 
-<Box width={[1,1, 1/2]}>
+<Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.27.23_PM.png](Screen_Shot_2020-06-18_at_2.27.23_PM.png)
 
 </Box>
-<Box width={[1,1, 1/2]}>
+<Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.27.31_PM.png](Screen_Shot_2020-06-18_at_2.27.31_PM.png)
 
@@ -29,12 +29,12 @@ Here's a side-by-side screenshot comparsion of the old version (left) and the up
 </Box>
 
 <Box display="flex" flexDirection={['column','column', 'row']}>
-<Box width={[1,1, 1/2]}>
+<Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.28.33_PM.png](Screen_Shot_2020-06-18_at_2.28.33_PM.png)
 
 </Box>
-<Box width={[1,1, 1/2]}>
+<Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.28.21_PM.png](Screen_Shot_2020-06-18_at_2.28.21_PM.png)
 
@@ -76,22 +76,22 @@ Here's an example of the final code (minus the Styled Components — just imagin
 Elements with the `menubar` role are required to have elements with the `role="menuitem"` property, so I took all the "list" or `<li>` elements and added the role. In order to ensure that users who use keyboard navigation don't stumble onto the hidden menu, I added a `tabIndex` to each of the `menuitem` that is set to `-1` when the menu is hidden.
 
 ```tsx
-import React from 'react'
-import styled from 'styled-components'
-import Link from 'gatsby-link'
-import { Box, Flex, Text } from 'rebass/styled-components'
-import { useTheme } from '../../context/ThemeContext'
-import DarkModeToggle from '../DarkModeToggle/DarkModeToggle'
+import React from "react";
+import styled from "styled-components";
+import Link from "gatsby-link";
+import { Box, Flex, Text } from "rebass/styled-components";
+import { useTheme } from "../../context/ThemeContext";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 interface HeaderProps {
-  readonly mobile: boolean
-  readonly visible: boolean
-  toggleVisibility: () => void
+  readonly mobile: boolean;
+  readonly visible: boolean;
+  toggleVisibility: () => void;
 }
 
 const Header: React.SFC<HeaderProps> = React.memo(
   ({ mobile, visible, toggleVisibility }) => {
-    const theme = useTheme()
+    const theme = useTheme();
     return (
       <StyledHeader justifyContent="flex-end">
         <StyledHeaderNav
@@ -102,32 +102,32 @@ const Header: React.SFC<HeaderProps> = React.memo(
         >
           <ul
             role="menubar"
-            aria-orientation={mobile ? 'vertical' : 'horizontal'}
+            aria-orientation={mobile ? "vertical" : "horizontal"}
             aria-hidden={mobile && visible}
           >
-            <li role="menuitem" tabindex={mobile && !visible && '-1'}>
-              <Link to={'/blog'}>
+            <li role="menuitem" tabindex={mobile && !visible && "-1"}>
+              <Link to={"/blog"}>
                 <Text variant="label">
                   Writing <span>📓</span>
                 </Text>
               </Link>
             </li>
-            <li role="menuitem" tabindex={mobile && !visible && '-1'}>
-              <Link to={'/projects'}>
+            <li role="menuitem" tabindex={mobile && !visible && "-1"}>
+              <Link to={"/projects"}>
                 <Text variant="label">
                   Work <span>🚀</span>
                 </Text>
               </Link>
             </li>
-            <li role="menuitem" tabindex={mobile && !visible && '-1'}>
-              <Link to={'/resources'}>
+            <li role="menuitem" tabindex={mobile && !visible && "-1"}>
+              <Link to={"/resources"}>
                 <Text variant="label">
                   Resources <span>💽</span>
                 </Text>
               </Link>
             </li>
-            <li role="menuitem" tabindex={mobile && !visible && '-1'}>
-              <Link to={'/about'}>
+            <li role="menuitem" tabindex={mobile && !visible && "-1"}>
+              <Link to={"/about"}>
                 <Text variant="label">
                   About <span>👨‍💻</span>
                 </Text>
@@ -155,7 +155,7 @@ const Header: React.SFC<HeaderProps> = React.memo(
             aria-label="Navigation button"
           >
             <svg
-              className={visible && 'active'}
+              className={visible && "active"}
               viewBox="0 0 100 100"
               width="50"
             >
@@ -176,7 +176,7 @@ const Header: React.SFC<HeaderProps> = React.memo(
         )}
 
         <Link
-          to={'/'}
+          to={"/"}
           className="logo"
           aria-label="Ryosuke Hana (the Japanese Hiragana characters for the name)"
         >
@@ -204,11 +204,11 @@ const Header: React.SFC<HeaderProps> = React.memo(
           </svg>
         </Link>
       </StyledHeader>
-    )
+    );
   }
-)
+);
 
-export default Header
+export default Header;
 ```
 
 ### Gotta love React 💜⚛️
@@ -222,12 +222,12 @@ One of the easiest changes was swapping the fonts for the new choices. I was alr
 I also needed to adjust some of the scaling, line height, and spacing of font styles I had created (like `h1` variant used for `<Text>` components). I played around with some of the theme values, as well as toyed with the margin/padding props to achieve more comfortable and legible spacing for text areas.
 
 <Box display="flex" flexDirection={['column','column', 'row']}>
-<Box width={[1,1, 1/2]}>
+<Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.27.58_PM.png](Screen_Shot_2020-06-18_at_2.27.58_PM.png)
 
 </Box>
-<Box width={[1,1, 1/2]}>
+<Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.28.09_PM.png](Screen_Shot_2020-06-18_at_2.28.09_PM.png)
 
@@ -248,41 +248,41 @@ I created a new JS file and folder in the `/functions/` directory of my project 
 
 ```tsx
 // /.functions/send-contact-form/send-contact-form.js
-require('dotenv').config()
-const sgMail = require('@sendgrid/mail')
+require("dotenv").config();
+const sgMail = require("@sendgrid/mail");
 
 exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
+  if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
-      body: 'Method Not Allowed',
-      headers: { Allow: 'POST' },
-    }
+      body: "Method Not Allowed",
+      headers: { Allow: "POST" },
+    };
   }
 
-  const data = JSON.parse(event.body)
+  const data = JSON.parse(event.body);
   if (!data.name || !data.email || !data.service) {
-    return { statusCode: 422, body: 'Name, email, and service are required.' }
+    return { statusCode: 422, body: "Name, email, and service are required." };
   }
 
   // using Twilio SendGrid's v3 Node.js Library
   // https://github.com/sendgrid/sendgrid-nodejs
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    to: 'ryosuke.san.hana@gmail.com',
-    from: 'contact@whoisryosuke.com',
+    to: "ryosuke.san.hana@gmail.com",
+    from: "contact@whoisryosuke.com",
     subject: `whoisryosuke.com Contact Form - ${data.service}`,
     text: `Greetings my name is ${data.name} and I'm looking for help with ${data.service}. You can reach me at ${data.email}.`,
     html: `Greetings my name is ${data.name} and I'm looking for help with ${data.service}. You can reach me at <a href="mailto:${data.email}">${data.email}</a>.`,
-  }
+  };
   try {
-    await sgMail.send(msg)
+    await sgMail.send(msg);
   } catch (e) {
-    return { statusCode: e.response.code, body: e.response.body }
+    return { statusCode: e.response.code, body: e.response.body };
   } finally {
-    return { statusCode: 200, body: 'Email sent successfully' }
+    return { statusCode: 200, body: "Email sent successfully" };
   }
-}
+};
 ```
 
 In order to test the serverless function in my development environment, I installed Netlify Dev, a CLI for replicating the Netlify platform and services locally. I spun up the dev server using `netlify dev` and sent a test "payload" of fake form data using the CLI:
@@ -306,30 +306,30 @@ Regardless, since it did seem to work, I started to integrate it with the existi
 
 ```tsx
 const submitContactData = async (e) => {
-  e.preventDefault()
-  setFormStatus({ ...formStatus, loading: true })
+  e.preventDefault();
+  setFormStatus({ ...formStatus, loading: true });
 
-  const formSubmission = await fetch('/.netlify/functions/send-contact-email', {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+  const formSubmission = await fetch("/.netlify/functions/send-contact-email", {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: JSON.stringify(contactData), // body data type must match "Content-Type" header
-  })
-  const formText = await formSubmission.text()
+  });
+  const formText = await formSubmission.text();
   setFormStatus({
     ...formStatus,
     loading: false,
     status: formSubmission.status,
     message: formText,
-  })
+  });
   // Destroys notification after it fades out
   setTimeout(() => {
     if (!formStatus.loading)
-      setFormStatus({ ...formStatus, status: null, message: '' })
-  }, 3000)
-}
+      setFormStatus({ ...formStatus, status: null, message: "" });
+  }, 3000);
+};
 ```
 
 ## 🌊 Simple "Parallax" backgrounds

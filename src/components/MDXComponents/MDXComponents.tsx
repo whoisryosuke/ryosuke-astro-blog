@@ -42,4 +42,5 @@ export const components = {
   ul: (props) => <List {...props} />,
   li: (props) => <ListItem {...props} />,
   div: (props) => <Box {...props} />,
+  Box: (props) => <Box {...props} />,
 };
