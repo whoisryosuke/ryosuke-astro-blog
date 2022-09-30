@@ -14,7 +14,7 @@ I finally got around to touching up the theme on my portfolio and blog site. I m
 
 Here's a side-by-side screenshot comparsion of the old version (left) and the updated version (right). The changes here are pretty evident, with an increase in legibility and a better hierarchy of size.
 
-<Box display="flex" flexDirection={['column','column', 'row']}>
+<Box display="flex" flexDirection={{mobile: 'column', tablet: 'column', desktop: 'row'}}>
 
 <Box style={{flex:1}}>
 
@@ -28,7 +28,7 @@ Here's a side-by-side screenshot comparsion of the old version (left) and the up
 </Box>
 </Box>
 
-<Box display="flex" flexDirection={['column','column', 'row']}>
+<Box display="flex" flexDirection={{mobile: 'column', tablet: 'column', desktop: 'row'}}>
 <Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.28.33_PM.png](Screen_Shot_2020-06-18_at_2.28.33_PM.png)
@@ -221,7 +221,7 @@ One of the easiest changes was swapping the fonts for the new choices. I was alr
 
 I also needed to adjust some of the scaling, line height, and spacing of font styles I had created (like `h1` variant used for `<Text>` components). I played around with some of the theme values, as well as toyed with the margin/padding props to achieve more comfortable and legible spacing for text areas.
 
-<Box display="flex" flexDirection={['column','column', 'row']}>
+<Box display="flex" flexDirection={{mobile: 'column', tablet: 'column', desktop: 'row'}}>
 <Box style={{flex:1}}>
 
 ![Screen_Shot_2020-06-18_at_2.27.58_PM.png](Screen_Shot_2020-06-18_at_2.27.58_PM.png)
