@@ -23,7 +23,7 @@ const Accordion = ({ children, title, ...props }: PropsWithChildren<Props>) => {
         className={accordionBarStyles}
       >
         <button className={accordionButtonStyles} onClick={handleToggle}>
-          <Text as="h2" fontFamily="heading" fontSize={4}>
+          <Text as="h2" fontFamily="heading" fontSize={4} id={title}>
             {title}
           </Text>
         </button>

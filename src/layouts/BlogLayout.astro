@@ -76,7 +76,7 @@ const { frontmatter } = Astro.props;
           {
             frontmatter.tags.map((tag) => (
               <Link
-                href={`/tagged/${tag}`}
+                href={`/tags/##${tag}`}
                 fontFamily="heading"
                 fontSize={3}
                 lineHeight={6}
