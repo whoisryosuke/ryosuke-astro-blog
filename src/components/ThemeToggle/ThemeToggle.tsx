@@ -2,7 +2,7 @@ import { base, themes } from "@/theme/index";
 import React, { useEffect, useRef } from "react";
 import { useTheme } from "src/context/theme";
 import useStore from "src/store";
-import { TbMoonStars, TbSun } from "react-icons/tb";
+import { TbMoonStars, TbSun } from "react-icons/tb/index";
 import { buttonStyles } from "./ToggleTheme.css";
 
 type Props = {};
