@@ -31,6 +31,8 @@ const mdxProvider = () => {
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://whoisryosuke.com",
+
   markdown: {
     shikiConfig: {
       theme: "material-palenight",

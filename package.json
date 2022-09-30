@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^1.1.0",
+    "@astrojs/rss": "^1.0.2",
     "@react-three/drei": "^9.30.2",
     "@react-three/fiber": "^8.7.3",
     "@react-three/postprocessing": "^2.6.2",
