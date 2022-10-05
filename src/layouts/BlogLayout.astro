@@ -4,6 +4,7 @@ import Box from "@/components/Box/Box";
 import Link from "@/components/Link/Link";
 import Text from "@/components/Text/Text";
 import Avatar from "@/components/Avatar/Avatar";
+import BlogContainer from "@/components/BlogContainer/BlogContainer";
 import DefaultPage from "./DefaultPage.astro";
 import { glassFadeStyle, glassStyles } from "@/styles/glass.css";
 // 1. The frontmatter prop gives access to frontmatter and other data
@@ -11,14 +12,8 @@ const { frontmatter } = Astro.props;
 ---
 
 <DefaultPage title={frontmatter.title}>
-  <Box
+  <BlogContainer
     as="section"
-    width={{
-      mobile: 3,
-      tablet: 6,
-      desktop: 10,
-      widescreen: 11,
-    }}
     paddingTop={10}
     px={{
       mobile: 1,
@@ -29,7 +24,7 @@ const { frontmatter } = Astro.props;
   >
     <Box
       px={{
-        mobile: 2,
+        mobile: 3,
         tablet: 4,
       }}
       className={clsx(glassStyles, glassFadeStyle)}
@@ -109,5 +104,5 @@ const { frontmatter } = Astro.props;
         </Box>
       </Box>
     </Box>
-  </Box>
+  </BlogContainer>
 </DefaultPage>
