@@ -19,6 +19,7 @@ const Html = ({ title, children }: PropsWithChildren<Props>) => {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <Fonts />
         <title>{title}</title>
+        <script src="/sw.js" />
       </head>
       <body className={bodyStyles}>{children}</body>
     </html>
