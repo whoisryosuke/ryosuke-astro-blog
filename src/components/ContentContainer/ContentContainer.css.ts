@@ -5,7 +5,7 @@ import { themes, base } from "../../theme";
 export const contentContainerStyles = style({
   "@media": {
     [MEDIA_QUERIES.mobile["@media"]]: {
-        width: '90%',
+        width: '100%',
     },
     [MEDIA_QUERIES.tablet["@media"]]: {
         width: '80%',
