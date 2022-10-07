@@ -356,23 +356,7 @@ useFrame((state) => {
 
 This effect was pretty simple and made the site a bit more fun to use.
 
-<blockquote class="twitter-tweet">
-  <p lang="en" dir="ltr">
-    playing around with micro interactions now{" "}
-    <a href="https://twitter.com/hashtag/r3f?src=hash&amp;ref_src=twsrc%5Etfw">
-      #r3f
-    </a>{" "}
-    <a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw">
-      #threejs
-    </a>{" "}
-    <a href="https://t.co/3bI9YvcATN">pic.twitter.com/3bI9YvcATN</a>
-  </p>
-  &mdash; Ryosuke (@whoisryosuke) <a href="https://twitter.com/whoisryosuke/status/1574650268527968257?ref_src=twsrc%5Etfw">September 27, 2022</a>
-</blockquote> <script
-  async
-  src="https://platform.twitter.com/widgets.js"
-  charset="utf-8"
-></script>
+<Tweet tweetId="1574650268527968257" />
 
 ![Untitled](./Untitled%205.png)
 
@@ -395,56 +379,6 @@ Although it has been a bit buggy? Occasionally pages will load with none or inco
 ### MDX Provider not supported out of box
 
 Had to find a custom Astro plugin script to do it. It essentially is a middleware for the MDX and it goes in does a simple “find and replace” on the exported JS. This works well, but it tends to crash the dev server randomly with a “maximum call stack exceeded” error 🤷‍♂️
-
-```jsx
-// astro.config.js
-import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
-
-import mdx from "@astrojs/mdx";
-
-// Swap out elements in MDX file with React components
-// e.g. `<p>` becomes `<Text>`
-const mdxProvider = () => {
-  return {
-    name: "mdx-components-provider",
-    enforce: "post",
-    transform(code, id) {
-      if (!id.endsWith(".mdx")) return;
-      code = `import { components } from '@/components/MDXComponents/MDXComponents';\n${code}`;
-      code = code.replace(
-        "export default MDXContent;",
-        `
-        export default function (props) {
-          const newProps = {
-            ...props,
-            components
-          }
-          return MDXContent(newProps);
-        };`
-      );
-      return code;
-    },
-  };
-};
-
-// https://astro.build/config
-export default defineConfig({
-  markdown: {
-    shikiConfig: {
-      theme: "material-palenight",
-    },
-  },
-  // Enable React to support React JSX components.
-  integrations: [react(), mdx()],
-
-  vite: {
-    // Example: Add custom vite plugins directly to your Astro project
-    plugins: [vanillaExtractPlugin(), mdxProvider()],
-  },
-});
-```
 
 ```jsx
 // MDXComponents.tsx
