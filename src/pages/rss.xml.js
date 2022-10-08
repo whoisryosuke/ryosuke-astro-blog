@@ -1,7 +1,16 @@
 import rss from "@astrojs/rss";
 
-const postImportResult = import.meta.glob("../posts/**/*.md", { eager: true });
+const postImportResult = import.meta.glob("./blog/**/**/*.mdx", {
+  eager: true,
+});
 const posts = Object.values(postImportResult);
+// Sort posts into years
+const sortedPosts = posts.sort(
+  (prevPost, post) =>
+    new Date(post.frontmatter.date) - new Date(prevPost.frontmatter.date),
+  {}
+);
+console.log("got posts for rss", sortedPosts);
 
 export const get = () =>
   rss({
@@ -16,7 +25,7 @@ export const get = () =>
     // simple example: generate items for every md file in /src/pages
     // see "Generating items" section for required frontmatter and advanced use cases
     // items: import.meta.glob("./**/*.mdx"),
-    items: posts.map((post) => ({
+    items: sortedPosts.map((post) => ({
       link: post.url,
       title: post.frontmatter.title,
       pubDate: post.frontmatter.date,
