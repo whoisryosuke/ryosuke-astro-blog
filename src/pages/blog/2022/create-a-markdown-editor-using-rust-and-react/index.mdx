@@ -37,7 +37,7 @@ marked.parse("# Marked in the browser\n\nRendered by **marked**.");
 
 The AST acts as a representation of the Markdown broken up into related chunks (like paragraphs, or bold text). An AST in JavaScript is usually just a giant object made up of `Node` objects that contain Markdown data. It’ll probably be a flat array, not with nested children, since you’ll inevitably “join” it together in order. This is pseudo-code of what an AST might look like:
 
-```rust
+```js
 const ast = {
 	children: [
 		Node {
