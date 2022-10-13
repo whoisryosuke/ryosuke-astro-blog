@@ -165,18 +165,18 @@ fn main() {
     // Call the iterate nodes function
     iter_nodes(root, &|node| {
         // Check the value of the node data
-				// This is basically a giant "switch" statement (for my JS peeps)
+        // This is basically a giant "switch" statement (for my JS peeps)
         match &mut node.data.borrow_mut().value {
-						// Here we check for the "FrontMatter" enum type
+            // Here we check for the "FrontMatter" enum type
             NodeValue::FrontMatter(ref mut block) => {
-								// The block is returned as a utf8 integer array (basically letters = numbers)
-								// So we use a method to convert that to a String so we can read it
+                // The block is returned as a utf8 integer array (basically letters = numbers)
+                // So we use a method to convert that to a String so we can read it
                 println!(
                     "Frontmatter: {}",
                     String::from_utf8(block.to_vec()).unwrap()
                 );
             }
-						// Other enum types you can play with. Just comment out the `println!`
+            // Other enum types you can play with. Just comment out the `println!`
             // Got text?
             &mut NodeValue::Text(ref mut text) => {
                 let orig = std::mem::replace(text, vec![]);
