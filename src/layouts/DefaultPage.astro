@@ -8,10 +8,10 @@ import MainNav from "../components/MainNav/MainNav";
 import ThemeToggle from "../components/ThemeToggle/ThemeToggle";
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 
-const { title } = Astro.props;
+const { title, meta } = Astro.props;
 ---
 
-<Html title={title}>
+<Html title={title} meta={meta}>
   <SceneWaves client:load />
   <Box
     display="flex"

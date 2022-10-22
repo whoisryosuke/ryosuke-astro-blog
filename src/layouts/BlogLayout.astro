@@ -7,11 +7,23 @@ import Avatar from "@/components/Avatar/Avatar";
 import BlogContainer from "@/components/BlogContainer/BlogContainer";
 import DefaultPage from "./DefaultPage.astro";
 import { glassFadeStyle, glassStyles } from "@/styles/glass.css";
+import { MetaTagsProps } from "@/components/MetaTags/MetaTags";
 // 1. The frontmatter prop gives access to frontmatter and other data
-const { frontmatter } = Astro.props;
+const { frontmatter, url } = Astro.props;
+
+// Meta image requires full URL so we work some magic to put it together
+const imageBaseUrl = url.match(/^.*[/]/)[0]
+const image = frontmatter.cover_image ? `${imageBaseUrl}${frontmatter.cover_image.replace("./", "")}` : null
+
+const meta: MetaTagsProps = {
+  title: frontmatter.title,
+  description: frontmatter.tags,
+  image,
+  url,
+}
 ---
 
-<DefaultPage title={frontmatter.title}>
+<DefaultPage title={frontmatter.title} meta={meta}>
   <BlogContainer
     as="section"
     paddingTop={10}
