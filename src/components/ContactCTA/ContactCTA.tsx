@@ -35,6 +35,9 @@ const ContactCTA = (props: Props) => {
         DMs are open
       </Text>
       <Stack gap="16px">
+        <ContactLink href="https://mastodon.gamedev.place/@whoisryosuke">
+          Mastodon
+        </ContactLink>
         <ContactLink href="https://twitter.com/whoisryosuke">
           Twitter
         </ContactLink>
