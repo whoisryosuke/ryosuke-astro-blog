@@ -8,7 +8,7 @@ cover_image: "./render-pipelines-in-wgpu-and-rust.png"
 layout: "@/layouts/BlogLayout.astro"
 ---
 
-I finished [this great wgpu tutorial](https://sotrh.github.io/learn-wgpu/) that gets you up and running with WebGPU and Rust using the wgpu crate. It teaches you to setup the graphic context and render pipeline, import and render a textured model, and even add lighting. You can see the end result in this video:
+I finished [this great wgpu tutorial](https://sotrh.github.io/learn-wgpu/) that gets you up and running with WebGPU and Rust using the wgpu crate. It teaches you to setup the graphic context and render pipeline, import and render a textured model, and even add lighting. [You can see the end result in this video.](https://twitter.com/whoisryosuke/status/1578653432872767488?s=20&t=MiuU4lI6Idu1bnkHM2TuNA)
 
 Afterwards though, you end up with a few modules, but most of the code is in one giant file. In a real application, you’d probably split up a lot of the functionality happening into reusable modules. I started to ask myself: how would I render multiple models with different textures — or an _entire scene_?
 
@@ -788,7 +788,7 @@ And just like that, we have multiple models in our app, each with unique instanc
 
 ![Screenshot of the native wgpu Rust app rendering a grid of 3D bananas and 2 cubes in different positions](./Untitled%205.png)
 
-[https://twitter.com/whoisryosuke/status/1592692904996151296?s=20&t=dkT7yZgvMlPDkVs1Y_P4WA](https://twitter.com/whoisryosuke/status/1592692904996151296?s=20&t=dkT7yZgvMlPDkVs1Y_P4WA)
+[🎥 See a video on Twitter here](https://twitter.com/whoisryosuke/status/1592692904996151296?s=20&t=dkT7yZgvMlPDkVs1Y_P4WA)
 
 ## Using Local uniforms
 
@@ -1012,7 +1012,7 @@ for node in &mut self.nodes {
 
 This should animate the color of your 3D object to go from blue to green (since we’re updating the RGBA values and adding/subtracting from the GB parts).
 
-[https://twitter.com/whoisryosuke/status/1593409473393045504?s=20&t=dkT7yZgvMlPDkVs1Y_P4WA](https://twitter.com/whoisryosuke/status/1593409473393045504?s=20&t=dkT7yZgvMlPDkVs1Y_P4WA)
+[🎥 See a video on Twitter here](https://twitter.com/whoisryosuke/status/1593409473393045504?s=20&t=dkT7yZgvMlPDkVs1Y_P4WA)
 
 # You still here? 👀
 
