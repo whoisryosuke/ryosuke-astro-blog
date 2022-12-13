@@ -10,7 +10,6 @@ const sortedPosts = posts.sort(
     new Date(post.frontmatter.date) - new Date(prevPost.frontmatter.date),
   {}
 );
-console.log("got posts for rss", sortedPosts);
 
 export const get = () =>
   rss({
