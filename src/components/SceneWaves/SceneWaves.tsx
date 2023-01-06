@@ -35,6 +35,7 @@ export const SceneWaves = (props: Props) => {
           zoom: 1,
         }}
         shadows
+        dpr={[1, 2]}
       >
         {/* <Stats /> */}
         {/* <OrbitControls /> */}
