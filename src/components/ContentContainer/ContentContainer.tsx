@@ -1,14 +1,20 @@
-import clsx from 'clsx'
-import React, { PropsWithChildren } from 'react'
-import Box, { BoxProps } from '../Box/Box'
-import { contentContainerStyles } from './ContentContainer.css'
+import clsx from "clsx";
+import React, { PropsWithChildren } from "react";
+import Box, { BoxProps } from "../Box/Box";
+import { contentContainerStyles } from "./ContentContainer.css";
 
-type Props = BoxProps & {}
+type Props = BoxProps & {};
 
-const ContentContainer = ({children, className, ...props}: PropsWithChildren< Props>) => {
+const ContentContainer = ({
+  children,
+  className,
+  ...props
+}: PropsWithChildren<Props>) => {
   return (
-    <Box className={clsx(contentContainerStyles, className)} {...props}>{children}</Box>
-  )
-}
+    <Box className={clsx(contentContainerStyles, className)} {...props}>
+      {children}
+    </Box>
+  );
+};
 
-export default ContentContainer
+export default ContentContainer;

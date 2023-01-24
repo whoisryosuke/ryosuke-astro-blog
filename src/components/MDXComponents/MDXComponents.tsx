@@ -6,7 +6,7 @@ import CodeInline from "../CodeInline/CodeInline";
 import CodeBlock from "../CodeBlock/CodeBlock";
 import List from "../List/List";
 import ListItem from "../List/ListItem";
-import { Tweet } from 'react-twitter-widgets'
+import { Tweet } from "react-twitter-widgets";
 import Blockquote from "../Blockquote/Blockquote";
 
 export const components = {

@@ -7,14 +7,14 @@ export const imageStyles = style({
 });
 
 export const imageContainerStyles = style({
-  width: "100%", 
-  textAlign:'center'
+  width: "100%",
+  textAlign: "center",
 });
 
 export const captionContainerStyles = style({
   display: "inline-block",
   margin: "auto",
-  textAlign:'center',
+  textAlign: "center",
   backgroundColor: themes.tokens.colors.glass,
   marginTop: base.tokens.space[2],
   marginBottom: base.tokens.space[2],

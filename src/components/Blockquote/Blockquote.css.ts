@@ -11,5 +11,5 @@ export const blockquoteStyles = style({
   paddingLeft: base.tokens.space[4],
   paddingRight: base.tokens.space[4],
   border: 0,
-  textShadow: "1px 2px 3px rgba(0,0,0,0.5)"
+  textShadow: "1px 2px 3px rgba(0,0,0,0.5)",
 });

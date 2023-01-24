@@ -15,7 +15,7 @@ export interface TextProps<ComponentType extends React.ElementType> {
   fontWeight?: FontSizeUtilityStyles["fontWeight"];
   lineHeight?: FontSizeUtilityStyles["lineHeight"];
   className?: string;
-  style?: CSSProperties,
+  style?: CSSProperties;
 }
 
 export function Text<ComponentType extends React.ElementType>({

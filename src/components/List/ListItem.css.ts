@@ -5,5 +5,4 @@ export const listItemStyles = style({
   color: themes.tokens.colors.text,
   marginBottom: base.tokens.space[2],
   lineHeight: "3rem",
-
 });

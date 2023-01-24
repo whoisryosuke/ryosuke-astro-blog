@@ -13,7 +13,7 @@ export const logoContainerStyles = style({
   "@media": {
     [MEDIA_QUERIES.mobile["@media"]]: {
       top: 250,
-      right: -20
+      right: -20,
     },
     [MEDIA_QUERIES.tablet["@media"]]: {
       top: 150,

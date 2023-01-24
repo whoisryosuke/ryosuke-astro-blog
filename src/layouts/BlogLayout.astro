@@ -12,15 +12,17 @@ import { MetaTagsProps } from "@/components/MetaTags/MetaTags";
 const { frontmatter, url } = Astro.props;
 
 // Meta image requires full URL so we work some magic to put it together
-const imageBaseUrl = url.match(/^.*[/]/)[0]
-const image = frontmatter.cover_image ? `${imageBaseUrl}${frontmatter.cover_image.replace("./", "")}` : null
+const imageBaseUrl = url.match(/^.*[/]/)[0];
+const image = frontmatter.cover_image
+  ? `${imageBaseUrl}${frontmatter.cover_image.replace("./", "")}`
+  : null;
 
 const meta: MetaTagsProps = {
   title: frontmatter.title,
   description: frontmatter.tags,
   image,
   url,
-}
+};
 ---
 
 <DefaultPage title={frontmatter.title} meta={meta}>

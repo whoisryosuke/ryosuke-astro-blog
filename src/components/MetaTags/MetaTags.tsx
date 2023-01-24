@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
 export type MetaTagsProps = {
   title: string;
   description: string;
   image: string;
   url: string;
-}
+};
 
 const MetaTags = ({
-    title = "Ryo's Blog",
-    description = "The blog and portfolio of Ryosuke Hana",
-    image = "/images/social-default.png",
-    url = ""
+  title = "Ryo's Blog",
+  description = "The blog and portfolio of Ryosuke Hana",
+  image = "/images/social-default.png",
+  url = "",
 }: MetaTagsProps) => {
   return (
     <>
@@ -22,7 +22,7 @@ const MetaTags = ({
       <meta property="og:url" content={`https://whoisryosuke.com${url}`} />
       <meta name="twitter:card" content="summary_large_image"></meta>
     </>
-  )
-}
+  );
+};
 
-export default MetaTags
+export default MetaTags;
