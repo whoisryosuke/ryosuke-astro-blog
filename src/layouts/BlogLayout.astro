@@ -8,8 +8,9 @@ import BlogContainer from "@/components/BlogContainer/BlogContainer";
 import DefaultPage from "./DefaultPage.astro";
 import { glassFadeStyle, glassStyles } from "@/styles/glass.css";
 import { MetaTagsProps } from "@/components/MetaTags/MetaTags";
+import TableOfContents from "@/components/TableOfContents/TableOfContents";
 // 1. The frontmatter prop gives access to frontmatter and other data
-const { frontmatter, url } = Astro.props;
+const { frontmatter, url, headings } = Astro.props;
 
 // Meta image requires full URL so we work some magic to put it together
 const imageBaseUrl = url.match(/^.*[/]/)[0];
@@ -23,6 +24,9 @@ const meta: MetaTagsProps = {
   image,
   url,
 };
+
+// const headings = await getHeadings();
+console.log("headings", headings)
 ---
 
 <DefaultPage title={frontmatter.title} meta={meta}>
@@ -66,6 +70,8 @@ const meta: MetaTagsProps = {
           <Text fontSize={1}>{frontmatter.date}</Text>
         </Box>
       </Box>
+
+      <TableOfContents headings={headings} />
 
       <slot />
 
