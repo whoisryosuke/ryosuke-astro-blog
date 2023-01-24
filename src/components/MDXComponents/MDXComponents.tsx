@@ -7,6 +7,7 @@ import CodeBlock from "../CodeBlock/CodeBlock";
 import List from "../List/List";
 import ListItem from "../List/ListItem";
 import { Tweet } from 'react-twitter-widgets'
+import Blockquote from "../Blockquote/Blockquote";
 
 export const components = {
   h1: (props) => (
@@ -43,6 +44,7 @@ export const components = {
   ul: (props) => <List {...props} />,
   li: (props) => <ListItem {...props} />,
   div: (props) => <Box {...props} />,
+  blockquote: (props) => <Blockquote {...props} />,
   Box: (props) => <Box {...props} />,
   Tweet,
 };

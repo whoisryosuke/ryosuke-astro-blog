@@ -21,5 +21,5 @@ export const captionContainerStyles = style({
   padding: base.tokens.space[1],
   paddingLeft: base.tokens.space[4],
   paddingRight: base.tokens.space[4],
-  borderRadius: base.tokens.space[3],
+  borderRadius: base.tokens.space[2],
 });
