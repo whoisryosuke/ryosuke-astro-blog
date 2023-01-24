@@ -10,5 +10,5 @@ export const glassStyles = style({
 
 export const glassFadeStyle = style({
   // Mask the bottom of the canvas with a gradient
-  background: `linear-gradient(to bottom, transparent 25%, ${themes.tokens.colors.glass} 50%, transparent 25%)`,
+  background: `linear-gradient(to bottom, transparent 10%, ${themes.tokens.colors.glass} 80%, transparent 90%)`,
 });

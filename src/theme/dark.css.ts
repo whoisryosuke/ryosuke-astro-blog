@@ -5,7 +5,7 @@ export const primaryColors = {
   text: "rgba(234,234,241,1)",
   reading: "rgba(221,221,228,1)",
   background: "rgba(245,245,241,1)",
-  glass: "rgba(40, 40, 40, 0.75)",
+  glass: "rgba(40, 40, 40, 0.65)",
   primary: {
     default: "rgba(72,69,239,1)",
     hovered: "#7A77FD",
