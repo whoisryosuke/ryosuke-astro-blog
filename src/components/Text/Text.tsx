@@ -4,6 +4,7 @@ import {
   fontSizeUtilityStyles,
   FontSizeUtilityStyles,
 } from "../../styles/utility-styles/fontSizes.css";
+import { CSSProperties } from "react";
 
 /* eslint-disable-next-line */
 export interface TextProps<ComponentType extends React.ElementType> {
@@ -14,6 +15,7 @@ export interface TextProps<ComponentType extends React.ElementType> {
   fontWeight?: FontSizeUtilityStyles["fontWeight"];
   lineHeight?: FontSizeUtilityStyles["lineHeight"];
   className?: string;
+  style?: CSSProperties,
 }
 
 export function Text<ComponentType extends React.ElementType>({
