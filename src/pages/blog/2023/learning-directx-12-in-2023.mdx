@@ -116,6 +116,14 @@ There’s not a wealth of introductory DirectX 12 video content online, but [thi
 
 After the beginner tutorials and articles, you might ask yourself, where do I go?
 
+## Microsoft ATG Samples
+
+This is the [original repo for DirectX sample code for Xbox and PC](https://github.com/microsoft/Xbox-ATG-Samples/tree/main/PCSamples/). If you're developing modern games for current-gen consoles (Xbox One), it's recommended you use [the latest GDK samples](https://github.com/microsoft/Xbox-GDK-Samples/) (that use [the Microsoft Game Development Kit](https://learn.microsoft.com/en-us/gaming/gdk/)). The GDK samples have PC samples, but there's way less than the ATG version.
+
+Both repos contain examples of basic 3D graphics and game development techniques, like rendering a texture, a PBR pipeline, or MSAA post processing.
+
+Most of these samples use library code from Microsoft, like gamepad support, so keep in mind that some of the functionality won't be cross-platform. I'd only recommend exploring these samples if you're desperate for more advanced examples and can separate the "magic" SDK code from real DirectX 12.
+
 ## MiniEngine
 
 ![Screenshot of the MiniEngine DirectX 12 app rendering a Roman colosseum](./Untitled%204.png)
