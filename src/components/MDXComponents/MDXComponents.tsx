@@ -6,8 +6,8 @@ import CodeInline from "../CodeInline/CodeInline";
 import CodeBlock from "../CodeBlock/CodeBlock";
 import List from "../List/List";
 import ListItem from "../List/ListItem";
-import { Tweet } from "react-twitter-widgets";
 import Blockquote from "../Blockquote/Blockquote";
+import Stack from "../Stack/Stack";
 
 export const components = {
   h1: (props) => (
@@ -46,5 +46,5 @@ export const components = {
   div: (props) => <Box {...props} />,
   blockquote: (props) => <Blockquote {...props} />,
   Box: (props) => <Box {...props} />,
-  Tweet,
+  Stack: (props) => <Stack {...props} />,
 };
