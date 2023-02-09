@@ -42,7 +42,7 @@ const Stack = ({
   });
 
   return (
-    <Box display="flex" style={{ ...style, ...containerDirection }} {...props}>
+    <Box display="flex" flexDirection={{mobile: 'column', computer: vertical ? 'column' : 'row'}} style={style} {...props}>
       {spacedChildren}
     </Box>
   );
