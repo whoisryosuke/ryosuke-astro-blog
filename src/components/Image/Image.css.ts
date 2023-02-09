@@ -4,6 +4,7 @@ import { themes, base } from "../../theme";
 export const imageStyles = style({
   width: "auto",
   margin: "auto",
+  maxWidth: "100%",
 });
 
 export const imageContainerStyles = style({
