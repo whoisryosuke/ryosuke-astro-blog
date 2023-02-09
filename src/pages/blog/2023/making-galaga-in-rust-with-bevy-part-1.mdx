@@ -573,9 +573,18 @@ Now that we have the texture displaying, let’s tile it using the shader. Right
 
 The first thought is to divide or multiply the UVs. But this doesn’t work. Our image only shows once, gets scaled down, and the last pixels get stretched to the size of our mesh.
 
+<Stack>
+<Box marginRight={2}>
+
 ![Example of multiplying the UVs of a nearly fullscreen 2D plane mesh. The texture is displayed once, scaled down, and the last pixels are scaled horizontally and vertically until they reach edges of mesh.](./Untitled%205.png)
 
+</Box>        
+<Box>
+
 ![Example of dividing the UVs of a nearly fullscreen 2D plane mesh. The texture is displayed once, scaled up, looking blurry and cropped.](./Untitled%206.png)
+
+</Box>        
+</Stack>
 
 ## Explaining UV Math
 
