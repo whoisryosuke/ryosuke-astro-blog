@@ -13,10 +13,9 @@ import TableOfContents from "@/components/TableOfContents/TableOfContents";
 const { frontmatter, url, headings } = Astro.props;
 
 // Meta image requires full URL so we work some magic to put it together
-const imageBaseUrl = url.match(/^.*[/]/)[0];
 const image = frontmatter.cover_image
-  ? `${imageBaseUrl}${frontmatter.cover_image.replace("./", "")}`
-  : null;
+  ? `${url}${frontmatter.cover_image.replace("./", "")}`
+  : `images/social-default.png`;
 
 const meta: MetaTagsProps = {
   title: frontmatter.title,
