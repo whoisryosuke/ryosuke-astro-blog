@@ -14,6 +14,7 @@ export const codeInlineStyles = style({
       paddingTop: base.tokens.space[0],
       paddingBottom: base.tokens.space[0],
       position: "relative",
+      wordBreak: "break-word"
     },
     "p > &:after": {
       content: "",
