@@ -14,7 +14,7 @@ const { frontmatter, url, headings } = Astro.props;
 
 // Meta image requires full URL so we work some magic to put it together
 const image = frontmatter.cover_image
-  ? `${url}${frontmatter.cover_image.replace("./", "")}`
+  ? `${url}/${frontmatter.cover_image.replace("./", "")}`
   : `images/social-default.png`;
 
 const meta: MetaTagsProps = {
