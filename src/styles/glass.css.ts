@@ -4,6 +4,7 @@ import { themes } from "../theme";
 
 export const glassStyles = style({
   backgroundColor: themes.tokens.colors.glass,
+  WebkitBackdropFilter: "blur(8px)",
   backdropFilter: "blur(8px)",
   borderRadius: base.tokens.space[5],
 });
