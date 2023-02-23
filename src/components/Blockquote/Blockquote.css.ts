@@ -5,7 +5,7 @@ export const blockquoteStyles = style({
   display: "flex",
   backgroundColor: themes.tokens.colors.primary.pressed,
   // backgroundColor: themes.tokens.colors.glass,
-  color: themes.tokens.colors.text,
+  color: 'rgba(234,234,241,1)',
   borderRadius: base.tokens.space[3],
   padding: base.tokens.space[1],
   paddingLeft: base.tokens.space[4],
