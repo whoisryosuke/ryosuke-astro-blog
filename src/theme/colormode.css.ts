@@ -4,6 +4,9 @@ const colors = {
   text: "",
   reading: "",
   background: "",
+  background_level1: "",
+  background_level2: "",
+  background_level3: "",
   primary: {
     default: "",
     hovered: "",

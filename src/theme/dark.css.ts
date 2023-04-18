@@ -5,6 +5,9 @@ export const primaryColors = {
   text: "rgba(234,234,241,1)",
   reading: "rgba(221,221,228,1)",
   background: "rgba(245,245,241,1)",
+  background_level1: "rgba(225,225,225,1)",
+  background_level2: "rgba(200,200,200,1)",
+  background_level3: "rgba(100,100,100,1)",
   glass: "rgba(40, 40, 40, 0.65)",
   primary: {
     default: "rgba(72,69,239,1)",

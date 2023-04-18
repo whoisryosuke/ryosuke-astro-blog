@@ -9,6 +9,7 @@ import DefaultPage from "./DefaultPage.astro";
 import { glassFadeStyle, glassStyles } from "@/styles/glass.css";
 import { MetaTagsProps } from "@/components/MetaTags/MetaTags";
 import TableOfContents from "@/components/TableOfContents/TableOfContents";
+import {tocBlogContainer} from "@/components/TableOfContents/TableOfContents.css";
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter, url, headings } = Astro.props;
 
@@ -27,7 +28,7 @@ const meta: MetaTagsProps = {
 ---
 
 <DefaultPage title={frontmatter.title} meta={meta}>
-  <BlogContainer
+  <Box
     as="section"
     paddingTop={10}
     px={{
@@ -44,7 +45,7 @@ const meta: MetaTagsProps = {
       }}
       className={clsx(glassStyles, glassFadeStyle)}
     >
-      <Box
+      <BlogContainer
         display="flex"
         alignItems={{ mobile: "flex-start", tablet: "flex-end" }}
         justifyContent="space-between"
@@ -68,9 +69,17 @@ const meta: MetaTagsProps = {
         </Box>
       </Box>
 
-      <TableOfContents headings={headings} />
+      <Box 
+        className={tocBlogContainer}
+        display="flex" 
+        flexDirection={{ mobile: "column", computer: "row-reverse" }}
+      >
+        <TableOfContents headings={headings} />
 
-      <slot />
+        <BlogContainer as="section">
+          <slot />
+        </BlogContainer>
+      </Box>
 
       <Box
         display="flex"
