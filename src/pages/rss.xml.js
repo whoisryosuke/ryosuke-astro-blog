@@ -28,6 +28,8 @@ export const get = () =>
       link: post.url,
       title: post.frontmatter.title,
       pubDate: post.frontmatter.date,
+      description:
+        post.frontmatter.description ?? post.frontmatter.tags.join(", "),
     })),
     // (optional) inject custom xml
     customData: `<language>en-us</language>`,

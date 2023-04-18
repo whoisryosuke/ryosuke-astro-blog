@@ -20,7 +20,7 @@ const image = frontmatter.cover_image
 
 const meta: MetaTagsProps = {
   title: frontmatter.title,
-  description: frontmatter.tags,
+  description: frontmatter.description ?? frontmatter.tags.join(", "),
   image,
   url,
 };
@@ -71,6 +71,12 @@ const meta: MetaTagsProps = {
 
       <Box 
         className={tocBlogContainer}
+        px={{
+          mobile: 1,
+          tablet: 4,
+          desktop: 6,
+          widescreen: 7,
+        }}
         display="flex" 
         flexDirection={{ mobile: "column", computer: "row-reverse" }}
       >
