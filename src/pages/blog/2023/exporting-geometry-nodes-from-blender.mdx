@@ -700,7 +700,7 @@ def convert_complex_type_to_json_format(default_value):
 
 Cool, we have an object stuffed with our nodes and links. Now we just export it to a JSON file. At a high level we’ll grab the current file path, create a JSON file in there, use the same name as our Blender file, and increment the filename (e.g. `Test-nodes-1.json`).
 
-We grab the path of the current file from Blender’s context (`bpy.context.blend_data.filepath`\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***)\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***. Then we pass it to the `Path()` module, this gives us handy methods like `with_suffix()` to change the file extension quickly. Since we need the filename itself (e.g. `Test` from `Test.blend`) we use the `with_suffix()` with a blank string to remove the extension.
+We grab the path of the current file from Blender’s context (`bpy.context.blend_data.filepath`). Then we pass it to the `Path()` module, this gives us handy methods like `with_suffix()` to change the file extension quickly. Since we need the filename itself (e.g. `Test` from `Test.blend`) we use the `with_suffix()` with a blank string to remove the extension.
 
 I also don’t want to override any existing JSON files, so we do a quick `while` loop checking if the path exists. I know this looks nasty with how long the parameter is, but I couldn’t find a good way to store the value in a variable and have it update each loop (maybe a Python thing?). Then we just `open()` the file path and `json.dump()` our data in.
 
